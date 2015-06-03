@@ -1,0 +1,358 @@
+<!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.7. Futon: Web GUI Administration Panel &mdash; Apache CouchDB 1.6 Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Apache CouchDB 1.6 Documentation" href="../index.html" />
+    <link rel="up" title="1. Introduction" href="index.html" />
+    <link rel="next" title="1.8. cURL: Your Command Line Friend" href="curl.html" />
+    <link rel="prev" title="1.6. Security" href="security.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../http-api.html" title="HTTP API Reference"
+             >API Reference</a></li>
+        <li class="right" >
+          <a href="../config-ref.html" title="Configuration Reference"
+             >Config Reference</a> |</li>
+        <li class="right" >
+          <a href="curl.html" title="1.8. cURL: Your Command Line Friend"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="security.html" title="1.6. Security"
+             accesskey="P">previous</a> |</li>
+  <li><a href="../index.html">Apache CouchDB 1.6 Documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">1. Introduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="futon-web-gui-administration-panel">
+<span id="intro-futon"></span><h1>1.7. Futon: Web GUI Administration Panel<a class="headerlink" href="#futon-web-gui-administration-panel" title="Permalink to this headline">¶</a></h1>
+<p>Futon is a native web-based interface built into CouchDB. It provides a
+basic interface to the majority of the functionality, including the
+ability to create, update, delete and view documents and views, provides
+access to the configuration parameters, and an interface for initiating
+replication.</p>
+<p>The default view is the Overview page which provides you with a list of
+the databases. The basic structure of the page is consistent regardless
+of the section you are in. The main panel on the left provides the main
+interface to the databases, configuration or replication systems. The
+side panel on the right provides navigation to the main areas of Futon
+interface:</p>
+<div class="figure align-center">
+<img alt="Futon Overview" src="../_images/futon-overview.png" />
+<p class="caption">Futon Overview</p>
+</div>
+<p>The main sections are:</p>
+<ul>
+<li><p class="first">Overview</p>
+<p>The main overview page, which provides a list of the databases and
+provides the interface for querying the database and creating and
+updating documents. See <a class="reference internal" href="#futon-management"><em>Managing Databases and Documents</em></a>.</p>
+</li>
+<li><p class="first">Configuration</p>
+<p>An interface into the configuration of your CouchDB installation. The
+interface allows you to edit the different configurable parameters.
+For more details on configuration, see <a class="reference internal" href="../config/index.html#config"><em>Configuring CouchDB</em></a> section.</p>
+</li>
+<li><p class="first">Replicator</p>
+<p>An interface to the replication system, enabling you to initiate
+replication between local and remote databases. See
+<a class="reference internal" href="#futon-replication"><em>Configuring Replication</em></a>.</p>
+</li>
+<li><p class="first">Status</p>
+<p>Displays a list of the running background tasks on the server.
+Background tasks include view index building, compaction and
+replication. The Status page is an interface to the
+<a class="reference internal" href="../api/server/common.html#api-server-active-tasks"><em>Active Tasks</em></a> API call.</p>
+</li>
+<li><p class="first">Verify Installation</p>
+<p>The Verify Installation allows you to check whether all of the
+components of your CouchDB installation are correctly installed.</p>
+</li>
+<li><p class="first">Test Suite</p>
+<p>The Test Suite section allows you to run the built-in test suite.
+This executes a number of test routines entirely within your browser
+to test the API and functionality of your CouchDB installation. If
+you select this page, you can run the tests by using the Run All
+button. This will execute all the tests, which may take some time.</p>
+</li>
+</ul>
+<div class="section" id="managing-databases-and-documents">
+<span id="futon-management"></span><h2>1.7.1. Managing Databases and Documents<a class="headerlink" href="#managing-databases-and-documents" title="Permalink to this headline">¶</a></h2>
+<p>You can manage databases and documents within Futon using the main
+Overview section of the Futon interface.</p>
+<p>To create a new database, click the Create Database ELLIPSIS button. You
+will be prompted for the database name, as shown in the figure below.</p>
+<div class="figure align-center">
+<img alt="Creating a Database" src="../_images/futon-createdb.png" />
+<p class="caption">Creating a Database</p>
+</div>
+<p>Once you have created the database (or selected an existing one), you
+will be shown a list of the current documents. If you create a new
+document, or select an existing document, you will be presented with the
+edit document display.</p>
+<p>Editing documents within Futon requires selecting the document and then
+editing (and setting) the fields for the document individually before
+saving the document back into the database.</p>
+<p>For example, the figure below shows the editor for a single document, a
+newly created document with a single ID, the document <tt class="docutils literal"><span class="pre">_id</span></tt> field.</p>
+<div class="figure align-center">
+<img alt="Editing a Document" src="../_images/futon-editdoc.png" />
+<p class="caption">Editing a Document</p>
+</div>
+<p>To add a field to the document:</p>
+<ol class="arabic">
+<li><p class="first">Click Add Field.</p>
+</li>
+<li><p class="first">In the fieldname box, enter the name of the field you want to create.
+For example, “company”.</p>
+</li>
+<li><p class="first">Click the green tick next to the field name to confirm the field name
+change.</p>
+</li>
+<li><p class="first">Double-click the corresponding Value cell.</p>
+</li>
+<li><p class="first">Enter a company name, for example “Example”.</p>
+</li>
+<li><p class="first">Click the green tick next to the field value to confirm the field
+value.</p>
+</li>
+<li><p class="first">The document is still not saved as this point. You must explicitly
+save the document by clicking the Save Document button at the top of
+the page. This will save the document, and then display the new
+document with the saved revision information (the <tt class="docutils literal"><span class="pre">_rev</span></tt> field).</p>
+<div class="figure align-center">
+<img alt="Edited Document" src="../_images/futon-editeddoc.png" />
+<p class="caption">Edited Document</p>
+</div>
+</li>
+</ol>
+<p>The same basic interface is used for all editing operations within Futon.
+You <em>must</em> remember to save the individual element (fieldname, value)
+using the green tick button, before then saving the document.</p>
+</div>
+<div class="section" id="configuring-replication">
+<span id="futon-replication"></span><h2>1.7.2. Configuring Replication<a class="headerlink" href="#configuring-replication" title="Permalink to this headline">¶</a></h2>
+<p>When you click the Replicator option within the Tools menu you are
+presented with the Replicator screen. This allows you to start
+replication between two databases by filling in or select the
+appropriate options within the form provided.</p>
+<div class="figure align-center">
+<img alt="Replication Form" src="../_images/futon-replform.png" />
+<p class="caption">Replication Form</p>
+</div>
+<p>To start a replication process, either the select the local database or
+enter a remote database name into the corresponding areas of the form.
+Replication occurs from the database on the left to the database on the
+right.</p>
+<p>If you are specifying a remote database name, you must specify the full
+URL of the remote database (including the host, port number and database
+name). If the remote instance requires authentication, you can specify
+the username and password as part of the URL, for example
+<tt class="docutils literal"><span class="pre">http://username:pass&#64;remotehost:5984/demo</span></tt>.</p>
+<p>To enable continuous replication, click the Continuous checkbox.</p>
+<p>To start the replication process, click the Replicate button. The
+replication process should start and will continue in the background. If
+the replication process will take a long time, you can monitor the
+status of the replication using the Status option under the Tools menu.</p>
+<p>Once replication has been completed, the page will show the information
+returned when the replication process completes by the API.</p>
+<p>The Replicator tool is an interface to the underlying replication API.
+For more information, see <a class="reference internal" href="../api/server/common.html#api-server-replicate"><em>/_replicate</em></a>. For more information on
+replication, see <a class="reference internal" href="../replication/index.html#replication"><em>Replication</em></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <p class="logo"><a href="../index.html">
+      <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    </a></p><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<div id="searchbox" style="display: none">
+
+<h3>Quick Search</h3>
+
+<form class="search" action="../search.html" method="get">
+<input type="text" name="q" style="width:115px">
+<input type="submit" value="Go">
+<input type="hidden" name="check_keywords" value="yes">
+<input type="hidden" name="area" value="default">
+</form>
+
+<br>
+
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1.7. Futon: Web GUI Administration Panel</a><ul>
+<li><a class="reference internal" href="#managing-databases-and-documents">1.7.1. Managing Databases and Documents</a></li>
+<li><a class="reference internal" href="#configuring-replication">1.7.2. Configuring Replication</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="security.html"
+                        title="previous chapter">1.6. Security</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="curl.html"
+                        title="next chapter">1.8. cURL: Your Command Line Friend</a></p><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+
+<h3>Utilities</h3>
+
+<ul>
+<li><a href="../">Futon</a></li>
+</ul>
+<!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<h3>More Help</h3>
+
+<ul>
+<li><a href="https://couchdb.apache.org/">Homepage</a></li>
+<li><a href="http://wiki.apache.org/couchdb/">Wiki</a></li>
+<li><a href="https://couchdb.apache.org/#mailing-list">Mailing Lists</a></li>
+<li><a href="http://webchat.freenode.net/?channels=couchdb">IRC</a></li>
+<li><a href="https://issues.apache.org/jira/browse/CouchDB">Issues</a></li>
+<li><a href="../download.html">Download</a></li>
+<li><a href="https://github.com/apache/couchdb/blob/master/share/doc/src/intro/futon.rst"
+       rel="nofollow">Show on GitHub</a></li>
+<li><a href="https://github.com/apache/couchdb/edit/master/share/doc/src/intro/futon.rst"
+       rel="nofollow">Edit on GitHub</a></li>
+</ul><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../http-api.html" title="HTTP API Reference"
+             >API Reference</a></li>
+        <li class="right" >
+          <a href="../config-ref.html" title="Configuration Reference"
+             >Config Reference</a> |</li>
+        <li class="right" >
+          <a href="curl.html" title="1.8. cURL: Your Command Line Friend"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="security.html" title="1.6. Security"
+             >previous</a> |</li>
+  <li><a href="../index.html">Apache CouchDB 1.6 Documentation</a> &raquo;</li>
+          <li><a href="index.html" >1. Introduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, The Apache Software Foundation.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

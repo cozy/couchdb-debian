@@ -1,0 +1,11 @@
+[Unit]
+Description=Couchdb service
+After=network.target
+
+[Service]
+User=couchdb
+PermissionsStartOnly=true
+ExecStartPre=-/bin/mkdir -p /var/run/couchdb
+ExecStartPre=/bin/chown -R couchdb:couchdb /var/run/couchdb
+ExecStart=/usr/bin/couchdb -o /dev/stdout -e /dev/stderr
+Restart=always

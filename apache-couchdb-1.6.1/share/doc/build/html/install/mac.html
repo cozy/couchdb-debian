@@ -1,0 +1,378 @@
+<!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.3. Installation on Mac OS X &mdash; Apache CouchDB 1.6 Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Apache CouchDB 1.6 Documentation" href="../index.html" />
+    <link rel="up" title="2. Installation" href="index.html" />
+    <link rel="next" title="2.4. Installation on FreeBSD" href="freebsd.html" />
+    <link rel="prev" title="2.2. Installation on Windows" href="windows.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../http-api.html" title="HTTP API Reference"
+             >API Reference</a></li>
+        <li class="right" >
+          <a href="../config-ref.html" title="Configuration Reference"
+             >Config Reference</a> |</li>
+        <li class="right" >
+          <a href="freebsd.html" title="2.4. Installation on FreeBSD"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="windows.html" title="2.2. Installation on Windows"
+             accesskey="P">previous</a> |</li>
+  <li><a href="../index.html">Apache CouchDB 1.6 Documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Installation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-on-mac-os-x">
+<span id="install-mac"></span><h1>2.3. Installation on Mac OS X<a class="headerlink" href="#installation-on-mac-os-x" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-using-the-apache-couchdb-native-application">
+<span id="install-mac-binary"></span><h2>2.3.1. Installation using the Apache CouchDB native application<a class="headerlink" href="#installation-using-the-apache-couchdb-native-application" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to run CouchDB on Mac OS X is through the native Mac OS X
+application. Just follow the below instructions:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://couchdb.org/#download">Download Apache CouchDB for Mac OS X</a>.
+Old releases are available at <a class="reference external" href="http://archive.apache.org/dist/couchdb/binary/mac/">archive</a>.</li>
+<li>Double click on the Zip file</li>
+<li>Drag and drop the Apache CouchDB.app into Applications folder</li>
+</ol>
+<p>That&#8217;s all, now CouchDB is installed on your Mac:</p>
+<ol class="arabic simple">
+<li>Run Apache CouchDB application</li>
+<li><a class="reference external" href="http://localhost:5984/_utils">Open up Futon</a>, the CouchDB admin interface</li>
+<li>Time to Relax!</li>
+</ol>
+</div>
+<div class="section" id="installation-with-homebrew">
+<span id="install-mac-homebrew"></span><h2>2.3.2. Installation with HomeBrew<a class="headerlink" href="#installation-with-homebrew" title="Permalink to this headline">¶</a></h2>
+<p>You can install the build tools by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>open /Applications/Installers/Xcode\ Tools/XcodeTools.mpkg
+</pre></div>
+</div>
+<p>You will need <a class="reference external" href="http://mxcl.github.com/homebrew/">Homebrew</a> installed to use the <cite>brew</cite> command. To install the
+other <a class="reference internal" href="unix.html#install-unix-dependencies"><em>dependencies</em></a> run next commands:</p>
+<div class="highlight-json"><div class="highlight"><pre>brew install autoconf
+brew install autoconf-archive
+brew install automake
+brew install libtool
+brew install erlang
+brew install icu4c
+brew install spidermonkey
+brew install curl
+</pre></div>
+</div>
+<p>You may want to link ICU so that CouchDB can find the header files
+automatically:</p>
+<div class="highlight-json"><div class="highlight"><pre>brew link icu4c
+</pre></div>
+</div>
+<p>The same is true for recent versions of Erlang:</p>
+<div class="highlight-json"><div class="highlight"><pre>brew link erlang
+</pre></div>
+</div>
+<p>Now it&#8217;s time to brew CouchDB:</p>
+<div class="highlight-json"><div class="highlight"><pre>brew install couchdb
+</pre></div>
+</div>
+<p>The above Erlang install will use the bottled (pre-compiled) version if you are:
+using <cite>/usr/local</cite> for <cite>homebrew</cite>, and on 10.6 or 10.7. If you&#8217;re not on one of
+these, <cite>homebrew</cite> will build from source, so consider doing:</p>
+<div class="highlight-json"><div class="highlight"><pre>brew install erlang --no-docs
+</pre></div>
+</div>
+<p>to trim down compilation time.</p>
+<p>If you&#8217;re hacking on CouchDB, and we hope you will, you may try the current
+git-based master (head) branch, or the next development release using this
+<tt class="docutils literal"><span class="pre">couchdb</span></tt> recipe, using either <tt class="docutils literal"><span class="pre">--head</span></tt> or <tt class="docutils literal"><span class="pre">--devel</span></tt> options respectively.
+This will allow quick installation of the future release branch when it becomes
+active. If you&#8217;re not sure if you need this, then you probably don&#8217;t.
+In both cases we assume you are comfortable identifying bugs, and handling any
+potential upgrades between commits to the codebase.</p>
+<div class="highlight-json"><div class="highlight"><pre>brew install [--devel|--head] couchdb
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OS X Lion might hang on the final brew.
+See the thread at <a class="reference external" href="https://github.com/mxcl/homebrew/issues/7024">https://github.com/mxcl/homebrew/issues/7024</a> it seems in
+most cases to be resolved by breaking out with <tt class="docutils literal"><span class="pre">CTRL-C</span></tt> and then repeating
+with <tt class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">-v</span> <span class="pre">couchdb</span></tt>.</p>
+</div>
+<p>If you wish to have CouchDB run as a daemon then, set up the account,
+using the &#8220;User &amp; Groups&#8221; preference pane:</p>
+<ul class="simple">
+<li>Create a standard user <cite>couchdb</cite> with home directory as
+<cite>/usr/local/var/lib/couchdb</cite></li>
+<li>Create a group called <cite>couchdb</cite> and add yourself, the <cite>couchdb</cite> user, and any
+others you want to be able to edit config or db files directly to it.
+Use the <cite>advanced</cite> group options to ensure the internal name is also correctly
+called <cite>couchdb</cite>.</li>
+</ul>
+<p>Some versions of Mac OS X ship a problematic OpenSSL library. If you&#8217;re
+experiencing troubles with CouchDB crashing intermittently with a segmentation
+fault or a bus error, you will need to install your own version of OpenSSL.</p>
+<div class="section" id="running-as-a-daemon">
+<h3>Running as a Daemon<a class="headerlink" href="#running-as-a-daemon" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <cite>launchctl</cite> command to control the CouchDB daemon.</p>
+<p>You can load the configuration by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>sudo launchctl load \
+     /usr/local/Library/LaunchDaemons/org.apache.couchdb.plist
+</pre></div>
+</div>
+<p>You can stop the CouchDB daemon by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>sudo launchctl unload \
+     /usr/local/Library/LaunchDaemons/org.apache.couchdb.plist
+</pre></div>
+</div>
+<p>You can start CouchDB by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>sudo launchctl start org.apache.couchdb
+</pre></div>
+</div>
+<p>You can restart CouchDB by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>sudo launchctl stop org.apache.couchdb
+</pre></div>
+</div>
+<p>You can edit the launchd configuration by running:</p>
+<div class="highlight-json"><div class="highlight"><pre>open /usr/local/Library/LaunchDaemons/org.apache.couchdb.plist
+</pre></div>
+</div>
+<p>To start the daemon on boot, copy the configuration file to:</p>
+<div class="highlight-json"><div class="highlight"><pre>/Library/LaunchDaemons
+</pre></div>
+</div>
+<p>Consult your system documentation for more information.</p>
+</div>
+</div>
+<div class="section" id="installation-from-macports">
+<span id="install-mac-macports"></span><h2>2.3.3. Installation from MacPorts<a class="headerlink" href="#installation-from-macports" title="Permalink to this headline">¶</a></h2>
+<p>To install CouchDB using MacPorts you have 2 package choices:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">couchdb</span></tt> - the latest release version</li>
+<li><tt class="docutils literal"><span class="pre">couchdb-devel</span></tt> - updated every few weeks with the latest from the master
+branch</li>
+</ul>
+<div class="highlight-json"><div class="highlight"><pre>$ sudo port install couchdb
+</pre></div>
+</div>
+<p>should be enough. MacPorts takes care of installing all necessary dependencies.
+If you have already installed some of the CouchDB dependencies via MacPorts,
+run this command to check and upgrade any outdated ones, after installing
+CouchDB:</p>
+<div class="highlight-json"><div class="highlight"><pre>$ sudo port upgrade couchdb
+</pre></div>
+</div>
+<p>This will upgrade dependencies recursively, if there are more recent versions
+available. If you want to run CouchDB as a service controlled by the OS, load
+the launchd configuration which comes with the project, with this command:</p>
+<div class="highlight-json"><div class="highlight"><pre>$ sudo port load couchdb
+</pre></div>
+</div>
+<p>and it should be up and accessible via Futon at <a class="reference external" href="http://127.0.0.1:5984/_utils">http://127.0.0.1:5984/_utils</a>.
+It should also be restarted automatically after reboot.</p>
+<p>Updating the ports collection. The collection of port files has to be updated
+to reflect the latest versions of available packages. In order to do that run:</p>
+<div class="highlight-json"><div class="highlight"><pre>$ sudo port selfupdate
+</pre></div>
+</div>
+<p>to update the port tree, and then install just as explained.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <p class="logo"><a href="../index.html">
+      <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    </a></p><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<div id="searchbox" style="display: none">
+
+<h3>Quick Search</h3>
+
+<form class="search" action="../search.html" method="get">
+<input type="text" name="q" style="width:115px">
+<input type="submit" value="Go">
+<input type="hidden" name="check_keywords" value="yes">
+<input type="hidden" name="area" value="default">
+</form>
+
+<br>
+
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.3. Installation on Mac OS X</a><ul>
+<li><a class="reference internal" href="#installation-using-the-apache-couchdb-native-application">2.3.1. Installation using the Apache CouchDB native application</a></li>
+<li><a class="reference internal" href="#installation-with-homebrew">2.3.2. Installation with HomeBrew</a><ul>
+<li><a class="reference internal" href="#running-as-a-daemon">Running as a Daemon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-from-macports">2.3.3. Installation from MacPorts</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="windows.html"
+                        title="previous chapter">2.2. Installation on Windows</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="freebsd.html"
+                        title="next chapter">2.4. Installation on FreeBSD</a></p><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+
+<h3>Utilities</h3>
+
+<ul>
+<li><a href="../">Futon</a></li>
+</ul>
+<!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+<h3>More Help</h3>
+
+<ul>
+<li><a href="https://couchdb.apache.org/">Homepage</a></li>
+<li><a href="http://wiki.apache.org/couchdb/">Wiki</a></li>
+<li><a href="https://couchdb.apache.org/#mailing-list">Mailing Lists</a></li>
+<li><a href="http://webchat.freenode.net/?channels=couchdb">IRC</a></li>
+<li><a href="https://issues.apache.org/jira/browse/CouchDB">Issues</a></li>
+<li><a href="../download.html">Download</a></li>
+<li><a href="https://github.com/apache/couchdb/blob/master/share/doc/src/install/mac.rst"
+       rel="nofollow">Show on GitHub</a></li>
+<li><a href="https://github.com/apache/couchdb/edit/master/share/doc/src/install/mac.rst"
+       rel="nofollow">Edit on GitHub</a></li>
+</ul><!--
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-->
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../http-api.html" title="HTTP API Reference"
+             >API Reference</a></li>
+        <li class="right" >
+          <a href="../config-ref.html" title="Configuration Reference"
+             >Config Reference</a> |</li>
+        <li class="right" >
+          <a href="freebsd.html" title="2.4. Installation on FreeBSD"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="windows.html" title="2.2. Installation on Windows"
+             >previous</a> |</li>
+  <li><a href="../index.html">Apache CouchDB 1.6 Documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Installation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, The Apache Software Foundation.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+# Copyright 2009, Noah Slater <nslater@tumbolia.org>
+
+# Copying and distribution of this file, with or without modification, are
+# permitted in any medium without royalty provided the copyright notice and this
+# notice are preserved.
+
+VERSION=%VERSION%
+
+case $1 in
+    purge)
+        if test -d "/etc/couchdb/local.d"; then
+            rm -r -f "/etc/couchdb/local.d" 
+        fi
+        if test -d "/var/lib/couchdb"; then
+            rm -r -f "/var/lib/couchdb"
+        fi
+        if test -d "/var/log/couchdb"; then
+            rm -r -f "/var/log/couchdb"
+        fi
+        ;;
+esac
+
+#DEBHELPER#

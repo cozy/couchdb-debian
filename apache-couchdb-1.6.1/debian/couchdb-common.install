@@ -1,0 +1,3 @@
+debian/tmp/usr/share/couchdb
+debian/tmp/usr/share/doc/couchdb/AUTHORS.gz usr/share/doc/couchdb-common
+debian/tmp/usr/share/doc/couchdb/THANKS.gz usr/share/doc/couchdb-common

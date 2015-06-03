@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with systemd
+
+override_dh_auto_configure:
+	sed -i s/%package_author_name%/`lsb_release -si`/ etc/couchdb/default.ini.tpl.in
+	sed -i s/%version%/`lsb_release -sr`/ etc/couchdb/default.ini.tpl.in
+	dh_auto_configure -- --disable-launchd --disable-init
+
+override_dh_auto_install:
+	dh_auto_install
+	chmod 0640 debian/tmp/etc/couchdb/local.ini
+	chmod 0750 debian/tmp/etc/couchdb/local.d
+	chmod 0750 debian/tmp/var/lib/couchdb
+	chmod 0750 debian/tmp/var/log/couchdb
+	rm -f debian/tmp/usr/lib/couchdb/erlang/lib/couch-*/priv/lib/couch_erl_driver.la
+	sed -i "/dependency_libs/ s/'.*'/''/" `find debian/tmp -name '*.la'`
+
+override_dh_gencontrol:
+	erlang-depends
+	dh_gencontrol
+
+get-packaged-orig-source:
+	uscan --noconf --download-current-version --destdir=. --rename
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=nginx

@@ -1,0 +1,5 @@
+debian/tmp/usr/bin
+debian/tmp/usr/lib
+debian/tmp/usr/share/man
+debian/tmp/etc/couchdb/default.ini
+debian/tmp/etc/couchdb/default.d

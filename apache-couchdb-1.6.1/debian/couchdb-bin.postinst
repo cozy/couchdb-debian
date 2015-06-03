@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+case $1 in
+    configure)
+        if dpkg --compare-versions "$2" lt-nl 1.2.0-2ubuntu1; then
+            # Hack to make the upgrade from the 1.0.1 Ubuntu package more correct:
+            chown root:root /etc/couchdb
+            chown root:root /etc/couchdb/default.ini
+            chown -R root:root /etc/couchdb/default.d
+            chmod 755 /etc/couchdb
+            chmod 644 /etc/couchdb/default.ini
+            chmod 755 /etc/couchdb/default.d
+        fi
+        ;;
+esac
+
+#DEBHELPER#

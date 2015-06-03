@@ -1,0 +1,191 @@
+Apache CouchDB
+Copyright 2009-2014 The Apache Software Foundation
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+This product also includes the following third-party components:
+
+ * ac_check_icu.m4 (http://autoconf-archive.cryp.to/ac_check_icu.html)
+
+   Copyright 2008, Akos Maroy <darkeye@tyrell.hu>
+
+ * ac_check_curl.m4 (http://autoconf-archive.cryp.to/ac_check_curl.html)
+
+   Copyright 2008, Akos Maroy <darkeye@tyrell.hu>
+
+ * pkg.m4 (http://http://pkg-config.freedesktop.org/wiki/)
+
+   Copyright 2004, Scott James Remnant <scott@netsplit.com>
+
+ * jQuery (http://jquery.org/)
+
+   Copyright 2012 jQuery Foundation and other contributors
+ 
+ * jQuery UI (http://jqueryui.com)
+
+   Copyright 2011, Paul Bakaus
+
+ * json2.js (http://www.json.org/)
+
+   Public domain
+
+ * MochiWeb (http://code.google.com/p/mochiweb/)
+
+   Copyright 2007, Mochi Media Coporation
+
+ * ibrowse (http://github.com/cmullaparthi/ibrowse/tree/master)
+
+   Copyright 2005-2012, Chandrashekhar Mullaparthi
+
+ * Erlang OAuth (http://github.com/tim/erlang-oauth)
+
+   Copyright 2012, the authors and contributors
+
+ * ETap (http://github.com/ngerakines/etap/)
+
+   Copyright 2009, Nick Gerakines <nick@gerakines.net>
+
+ * mimeparse.js (http://code.google.com/p/mimeparse/)
+
+   Copyright 2009, Chris Anderson <jchris@apache.org>
+
+ * base64.js
+
+   Copyright 1999, Masanao Izumo <iz@onicos.co.jp>
+
+ * jspec.js (http://visionmedia.github.com/jspec/)
+
+  Copyright 2010 TJ Holowaychuk <tj@vision-media.ca>
+
+ * yajl (http://lloyd.github.com/yajl/)
+
+  Copyright 2010, Lloyd Hilaiel
+
+ * snappy (http://code.google.com/p/snappy/)
+
+  Copyright 2005, Google Inc.
+
+ * snappy-erlang-nif (https://github.com/fdmanana/snappy-erlang-nif)
+
+  Copyright 2011, Filipe David Manana <fdmanana@apache.org>
+
+ * CoffeeScript (http://coffeescript.org/)
+
+  Copyright 2011, Jeremy Ashkenas
+
+ * Sphinx (http://sphinx-doc.org/)
+ 
+   Copyright 2011, the Sphinx team
+
+ * Sizzle (http://sizzlejs.com/)
+ 
+   Copyright 2010, The Dojo Foundation
+ 
+ * Underscore.js 1.4.2 (http://underscorejs.org)
+
+   Copyright 2012, Jeremy Ashkenas
+
+ * almond.js (http://github.com/jrburke/almond)
+
+  Copyright 2011, The Dojo Foundation
+
+ * backbone.js (http://backbonejs.org/)
+
+  Copyright 2012, Jeremy Ashkenas, DocumentCloud Inc.
+
+ * Bootstrap (http://twitter.github.com/bootstrap/)
+
+  Copyright 2012, Twitter, Inc.
+
+ * d3.js (http://d3js.org)
+
+  Copyright 2012, Michael Bostock
+
+ * Lodash (http://lodash.com/)
+
+  Copyright 2012, John-David Dalton <http://allyoucanleet.com/>
+
+ * nvd3.js (http://nvd3.org/)
+
+  Copyright 2012, Novus Partners, Inc.
+
+ * backbone.layoutmanager.js (https://github.com/tbranyen/backbone.layoutmanager)
+
+  Copyright 2012, Tim Branyen (@tbranyen)
+
+ * prettify.js (http://code.google.com/p/google-code-prettify/)
+
+  Copyright 2011, Mike Samuel et al
+
+ * PouchDB (https://github.com/daleharvey/pouchdb)
+
+  Copyright 2012, Dale Harvey et al
+
+ * require.js (https://github.com/jrburke/requirejs)
+
+   Copyright (c) 2010-2011, The Dojo Foundation
+
+ * jquery.form.js (https://github.com/malsup/form/)
+
+   Copyright 2006-2013 (c) M. Alsup
+
+ * couch_dbupdates
+   
+   Copyright 2012, Benoît Chesneau <benoitc@refuge.io>
+ 
+ * mocha.js (https://github.com/visionmedia/mocha)
+  
+   Copyright (c) 2011-2013 TJ Holowaychuk <tj@vision-media.ca>
+
+ * chaijs https://github.com/chaijs
+   
+   Copyright (c) 2011-2013 Jake Luer jake@alogicalparadox.com
+
+ * sinon-chai
+
+   Copyright © 2012–2013 Domenic Denicola <domenic@domenicdenicola.com>
+ 
+ * spin.js
+
+   Copyright (c) 2011 Felix Gnass [fgnass at neteye dot de]
+ 
+ * font-awesome http://fortawesome.github.io/Font-Awesome/
+
+   Copyright (c) 2013 Dave Gandy
+
+ * httpdomain.py (https://bitbucket.org/birkenfeld/sphinx-contrib/src/6a3a8ca714cfce957530890d0431d9a7b88c930f/httpdomain/sphinxcontrib/httpdomain.py?at=httpdomain-1.1.9)
+
+   Copyright (c) 2010, Hong Minhee <minhee@dahlia.kr>
+
+ * externals.rst (http://davispj.com/2010/09/26/new-couchdb-externals-api.html)
+
+   Copyright 2008-2010, Paul Joseph Davis <paul.joseph.davis@gmail.com>
+
+ * protocol.rst (http://www.dataprotocols.org/en/latest/couchdb_replication.html)
+
+   Copyright 2011-2013, Benoît Chesneau <benoitc@refuge.io>
+
+ * views/intro.rst views/nosql.rst views/pagination.rst
+
+   Copyright 2013, Creative Commons Attribution license
+
+ * share/doc/src/couchapp/views/joins.rst (Using View Collation)
+
+   Copyright 2007, Christopher Lenz <cmlenz@gmail.com>
+
+ * share/doc/src/templates/couchdb/domainindex.html
+
+   Copyright 2007-2011 by the Sphinx team
+
+ * sandbox.js https://github.com/KlausTrainer/sandbox.js
+
+   (c) 2013 Klaus Trainer
+
+ * ace editor https://github.com/ajaxorg/ace
+
+   Copyright (c) 2010, Ajax.org B.V.
+
+ * src/fauxton/asserts/js/plugins/cloudant.pagingcollection.js
+
+   Copyright (c) 2014, Cloudant http://cloudant.com

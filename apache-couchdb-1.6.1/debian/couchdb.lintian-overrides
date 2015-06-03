@@ -1,0 +1,4 @@
+non-standard-file-perm etc/couchdb/local.ini 0640 != 0644
+non-standard-file-perm etc/couchdb/local.ini.d 0750 != 0755
+non-standard-dir-perm var/lib/couchdb/ 0750 != 0755
+non-standard-dir-perm var/log/couchdb/ 0750 != 0755
