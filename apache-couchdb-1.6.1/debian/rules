@@ -6,7 +6,7 @@
 override_dh_auto_configure:
 	sed -i s/%package_author_name%/`lsb_release -si`/ etc/couchdb/default.ini.tpl.in
 	sed -i s/%version%/`lsb_release -sr`/ etc/couchdb/default.ini.tpl.in
-	dh_auto_configure -- --disable-launchd --disable-init
+	dh_auto_configure -- --disable-launchd --disable-init --disable-tests
 
 override_dh_auto_install:
 	dh_auto_install
@@ -25,4 +25,4 @@ get-packaged-orig-source:
 	uscan --noconf --download-current-version --destdir=. --rename
 
 override_dh_systemd_enable:
-	dh_systemd_enable --name=nginx
+	dh_systemd_enable --name=couchdb
