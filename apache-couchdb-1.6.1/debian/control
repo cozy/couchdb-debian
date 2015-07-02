@@ -1,7 +1,7 @@
 Source: apache-couchdb
 Section: misc
 Priority: optional
-Maintainer: Dave Cottlehuber <dch@apache.org>
+Maintainer: Cozy Debian Packaging <debian-packaging@cozycloud.cc>
 Build-Depends: debhelper (>= 8.0.0),
                dh-systemd (>= 1.5),
                autotools-dev,
