@@ -1,0 +1,39 @@
+Format: 1.8
+Date: Tue, 02 Jun 2015 10:21:50 +0000
+Source: apache-couchdb
+Binary: couchdb-common couchdb-bin couchdb
+Architecture: source all amd64
+Version: 1.6.1-1
+Distribution: jessie
+Urgency: medium
+Maintainer: Dave Cottlehuber <dch@apache.org>
+Changed-By: root <nicolas@cozycloud.cc>
+Description:
+ couchdb    - RESTful document oriented database - system-wide instance
+ couchdb-bin - RESTful document oriented database
+ couchdb-common - RESTful document oriented database - common data
+Changes:
+ apache-couchdb (1.6.1-1) jessie; urgency=medium
+ .
+   * Debian cozy package
+Checksums-Sha1:
+ 9e0d2123d5f48e8a1828bc3ce674a226fe7ae5ee 1210 apache-couchdb_1.6.1-1.dsc
+ 6275f3818579d7b307052e9735c42a8a64313229 12085350 apache-couchdb_1.6.1.orig.tar.gz
+ cbd2eb68b0696dca3f191dab82147031f75d78cc 4412 apache-couchdb_1.6.1-1.debian.tar.xz
+ 66ffd386d89bf92b7ffa8816805886e12e54c125 3874638 couchdb-common_1.6.1-1_all.deb
+ 0ee07aef5bc20ecf84f0b213874ec6928c06f452 453848 couchdb-bin_1.6.1-1_amd64.deb
+ 04757ea8e29ad7b9d176d0137be252a53ab36fd6 6428 couchdb_1.6.1-1_all.deb
+Checksums-Sha256:
+ f96f86f7989a6b4ac1683ff70cbe331693625425d4f7657d6ef3bc79c5b404c9 1210 apache-couchdb_1.6.1-1.dsc
+ 5a601b173733ce3ed31b654805c793aa907131cd70b06d03825f169aa48c8627 12085350 apache-couchdb_1.6.1.orig.tar.gz
+ 43d481be96bbfcab6e8efe1225a33ab5a44b8614f8f076251732c11ea9287f81 4412 apache-couchdb_1.6.1-1.debian.tar.xz
+ 438a227d52779afbae261565f2f48303e5f440fc69c22c4f65e6062af000bcf2 3874638 couchdb-common_1.6.1-1_all.deb
+ 9a867fce13a04676da62e00d04bfe9d71e4d127a6068acda1958294412f8d4f9 453848 couchdb-bin_1.6.1-1_amd64.deb
+ 342c681251d5543d5308da74b964d5c7966b6797d65e7159542a80fbf3faa071 6428 couchdb_1.6.1-1_all.deb
+Files:
+ 1c796ebcf0188546028d492250840e37 1210 misc optional apache-couchdb_1.6.1-1.dsc
+ 01a2c8ab4fcde457529428993901a060 12085350 misc optional apache-couchdb_1.6.1.orig.tar.gz
+ c4bfcb2d45a7b6fec4b81181641b8245 4412 misc optional apache-couchdb_1.6.1-1.debian.tar.xz
+ 7db9e80c48de5e03d14db681799f3d5a 3874638 misc optional couchdb-common_1.6.1-1_all.deb
+ 16d7a8159712e0a404dc3035c4c70392 453848 misc optional couchdb-bin_1.6.1-1_amd64.deb
+ 39c50587ebcf98ddfdbd5341ffc2afda 6428 misc optional couchdb_1.6.1-1_all.deb

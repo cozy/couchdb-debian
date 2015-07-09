@@ -1,0 +1,1652 @@
+ dpkg-buildpackage -rfakeroot -d -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package apache-couchdb
+dpkg-buildpackage: source version 1.6.1-1
+dpkg-buildpackage: source distribution jessie
+dpkg-buildpackage: source changed by root <nicolas@cozycloud.cc>
+ dpkg-source --before-build apache-couchdb-1.6.1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with systemd
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b apache-couchdb-1.6.1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building apache-couchdb using existing ./apache-couchdb_1.6.1.orig.tar.gz
+dpkg-source: info: building apache-couchdb in apache-couchdb_1.6.1-1.debian.tar.xz
+dpkg-source: info: building apache-couchdb in apache-couchdb_1.6.1-1.dsc
+ debian/rules build
+dh build --with systemd
+   dh_testdir
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+sed -i s/%package_author_name%/`lsb_release -si`/ etc/couchdb/default.ini.tpl.in
+sed -i s/%version%/`lsb_release -sr`/ etc/couchdb/default.ini.tpl.in
+dh_auto_configure -- --disable-launchd --disable-init --disable-tests
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking how to create a ustar tar archive... gnutar
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... none
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) none
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1966080
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether ln -s works... yes
+checking for pkg-config... no
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... none
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether byte ordering is bigendian... no
+checking for stdint.h... (cached) yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for mmap... yes
+checking if the compiler supports __builtin_expect... yes
+checking if the compiler supports __builtin_ctzll... yes
+checking for pthread_create in -lpthread... no
+checking for erl... /usr/bin/erl
+checking for escript... /usr/bin/escript
+checking for JS... no
+checking for JS... no
+checking jsapi.h usability... yes
+checking jsapi.h presence... yes
+checking for jsapi.h... yes
+checking for JS_NewContext in -lmozjs185... yes
+checking for JS_NewCompartmentAndGlobalObject in -lmozjs185... yes
+checking whether JSOPTION_ANONFUNFIX is declared... yes
+checking for JS_ThrowStopIteration in -lmozjs185... yes
+checking for JS_GetStringCharsAndLength in -lmozjs185... yes
+checking for JSScript*... no
+./configure: line 18138: fg: no job control
+checking for icu-config... /usr/bin/icu-config
+checking for ICU >= 3.4.1... yes
+checking ICU_CPPFLAGS... -I/usr/include 
+checking ICU_CFLAGS...  
+checking ICU_CXXFLAGS... --std=c++0x 
+checking ICU_LIBS...  -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata  
+checking for curl-config... /usr/bin/curl-config
+checking for curl (7.38.0) >= 7.18.0... yes
+checking Erlang version compatibility... detected Erlang version: 6.2.0...compatible
+checking for erlc... /usr/bin/erlc
+checking erl_driver.h usability... yes
+checking erl_driver.h presence... yes
+checking for erl_driver.h... yes
+checking for help2man... yes
+checking for pdflatex... no
+configure: WARNING: You will be unable to regenerate PDF documentation.
+checking for makeinfo... yes
+checking for install-info... yes
+checking for sphinx-build... no
+configure: WARNING: You will be unable to regenerate documentation.
+checking python module: pygments... no
+checking pygments version >= 1.5... no
+configure: WARNING: Syntax highlighting may not work.
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating bin/couch-config.tpl
+config.status: creating bin/couchdb.tpl
+config.status: creating bin/couchdb.bat.tpl
+config.status: creating bin/Makefile
+config.status: creating etc/couchdb/Makefile
+config.status: creating etc/couchdb/default.ini.tpl
+config.status: creating etc/default/Makefile
+config.status: creating etc/init/couchdb.tpl
+config.status: creating etc/init/Makefile
+config.status: creating etc/launchd/org.apache.couchdb.plist.tpl
+config.status: creating etc/launchd/Makefile
+config.status: creating etc/logrotate.d/couchdb.tpl
+config.status: creating etc/logrotate.d/Makefile
+config.status: creating etc/windows/Makefile
+config.status: creating etc/Makefile
+config.status: creating share/Makefile
+config.status: creating share/doc/Makefile
+config.status: creating share/doc/build/Makefile
+config.status: creating src/Makefile
+config.status: creating src/couch_dbupdates/Makefile
+config.status: creating src/couch_index/Makefile
+config.status: creating src/couch_mrview/Makefile
+config.status: creating src/couch_plugins/Makefile
+config.status: creating src/couch_replicator/Makefile
+config.status: creating src/couchjs-node/Makefile
+config.status: creating src/couchdb/couch.app.tpl
+config.status: creating src/couchdb/Makefile
+config.status: creating src/couchdb/priv/Makefile
+config.status: creating src/erlang-oauth/Makefile
+config.status: creating src/etap/Makefile
+config.status: creating src/ibrowse/Makefile
+config.status: creating src/mochiweb/Makefile
+config.status: creating src/snappy/Makefile
+config.status: creating src/snappy/google-snappy/snappy-stubs-public.h
+config.status: creating src/ejson/Makefile
+config.status: creating test/Makefile
+config.status: creating test/bench/Makefile
+config.status: creating test/etap/Makefile
+config.status: creating test/etap/test_util.erl
+config.status: creating test/javascript/Makefile
+config.status: creating test/view_server/Makefile
+config.status: creating utils/Makefile
+config.status: creating var/Makefile
+config.status: creating config.h
+config.status: creating src/snappy/google-snappy/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+
+You have configured Apache CouchDB, time to relax.
+
+Run `make && sudo make install' to install.
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+   dh_auto_build
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make  all-recursive
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+Making all in bin
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make  all-am
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+sed -e "s|%ERL%|/usr/bin/erl|g" \
+    -e "s|%ICU_CONFIG%|/usr/bin/icu-config|g" \
+    -e "s|%bindir%|/usr/bin|g" \
+    -e "s|%localerlanglibdir%|/usr/lib/couchdb/erlang/lib|g" \
+    -e "s|%defaultini%|default.ini|g" \
+    -e "s|%localini%|local.ini|g" \
+    -e "s|%localconfdir%|/etc/couchdb|g" \
+    -e "s|%localstatelogdir%|/var/log/couchdb|g" \
+    -e "s|%localstatelibdir%|/var/lib/couchdb|g" \
+    -e "s|%localstatedir%|/var|g" \
+    -e "s|%locallibdir%|/usr/lib/couchdb|g" \
+    -e "s|%bug_uri%|https://issues.apache.org/jira/browse/COUCHDB|g" \
+    -e "s|%package_author_address%|dev@couchdb.apache.org|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%package_name%|Apache CouchDB|g" \
+    -e "s|%version%|1.6.1|g" \
+    -e "s|%couchdb_command_name%|`echo couchdb | sed 's,x,x,'`|g" > \
+couchdb < couchdb.tpl
+chmod +x couchdb
+sed -e "s|%ERL%|/usr/bin/erl|g" \
+    -e "s|%bindir%|/usr/bin|g" \
+    -e "s|%localerlanglibdir%|/usr/lib/couchdb/erlang/lib|g" \
+    -e "s|%localconfdir%|/etc/couchdb|g" \
+    -e "s|%localdatadir%|/usr/share/couchdb|g" \
+    -e "s|%localbuilddatadir%|/usr/share/couchdb|g" \
+    -e "s|%localstatelogdir%|/var/log/couchdb|g" \
+    -e "s|%localstatelibdir%|/var/lib/couchdb|g" \
+    -e "s|%localstatedir%|/var|g" \
+    -e "s|%localstaterundir%|/var/run/couchdb|g" \
+    -e "s|%couchlibdir%|/usr/lib/couchdb/erlang/lib/couch-%version%|g"\
+    -e "s|%couchincludedir%|/usr/lib/couchdb/erlang/lib/include|g"\
+    -e "s|%couchebindir%|/usr/lib/couchdb/erlang/lib/ebin|g"\
+    -e "s|%couchprivlibdir%|/usr/lib/couchdb/erlang/lib/couch-%version%/priv/lib|g"\
+    -e "s|%bug_uri%|https://issues.apache.org/jira/browse/COUCHDB|g" \
+    -e "s|%package_author_address%|dev@couchdb.apache.org|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%package_name%|Apache CouchDB|g" \
+    -e "s|%version%|1.6.1|g" \
+    -e "s|%erlangversion%|17|g" \
+    -e "s|%erlangbin%|/usr/bin/erl|g" \
+    -e "s|%couchdb_command_name%|`echo couchdb | sed 's,x,x,'`|g" > \
+couch-config < couch-config.tpl
+chmod +x couch-config
+ln -s -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv/couchjs" "couchjs_dev"
+sed -e "s|%ERL%|/usr/bin/erl|g" \
+    -e "s|%bindir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin|g" \
+    -e "s|%localerlanglibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/couchdb|g" \
+    -e "s|%couchlibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/couchdb|g"\
+    -e "s|%couchincludedir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/couchdb|g"\
+    -e "s|%couchebindir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/couchdb|g"\
+    -e "s|%couchprivlibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv/.libs|g"\
+    -e "s|%localdatadir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share|g" \
+    -e "s|%localbuilddatadir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share|g" \
+    -e "s|%localstatelibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/lib|g" \
+    -e "s|%localstatelogdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/log|g" \
+    -e "s|%localstatedir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp|g" \
+    -e "s|%localstaterundir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/run|g" \
+    -e "s|%bug_uri%|https://issues.apache.org/jira/browse/COUCHDB|g" \
+    -e "s|%package_author_address%|dev@couchdb.apache.org|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%package_name%|Apache CouchDB|g" \
+    -e "s|%version%|1.6.1|g" \
+    -e "s|%erlangversion%|17|g" \
+    -e "s|%erlangbin%|/usr/bin/erl|g" \
+    -e "s|%couchdb_command_name%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils/run|g" > \
+couch-config_dev < couch-config.tpl
+chmod +x couch-config_dev
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+Making all in etc
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making all in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+sed -e "s|%bindir%|/usr/bin|g" \
+    -e "s|%localconfdir%|/etc/couchdb|g" \
+    -e "s|%localdatadir%|/usr/share/couchdb|g" \
+    -e "s|%localbuilddatadir%|/usr/share/couchdb|g" \
+    -e "s|%locallibdir%|/usr/lib/couchdb|g" \
+    -e "s|%localstatelibdir%|/var/lib/couchdb|g" \
+    -e "s|%localstatelogdir%|/var/log/couchdb|g" \
+    -e "s|%localstaterundir%|/var/run/couchdb|g" \
+    -e "s|%couchprivlibdir%|/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib|g" \
+    -e "s|%couchjs_command_name%|`echo couchjs | sed 's,x,x,'`|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%version%|1.6.1|g" \
+< default.ini.tpl > default.ini
+sed -e "s|%bindir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin|g" \
+    -e "s|%localconfdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb|g" \
+    -e "s|%localdatadir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share|g" \
+    -e "s|%locallibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp|g" \
+    -e "s|%localbuilddatadir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share|g" \
+    -e "s|%localstatelibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/lib|g" \
+    -e "s|%localstatelogdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/log|g" \
+    -e "s|%localstaterundir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/run|g" \
+    -e "s|%couchprivlibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv/.libs|g" \
+    -e "s|%couchjs_command_name%|`echo couchjs_dev | sed 's,x,x,'`|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%version%|1.6.1|g" \
+< default.ini.tpl > default_dev.ini
+if test ! -f "local_dev.ini"; then \
+    cp local.ini local_dev.ini; \
+    chmod +w local_dev.ini; \
+fi
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+Making all in default
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+Making all in init
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+Making all in launchd
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+Making all in logrotate.d
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+Making all in windows
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+sed -e "s|%localstatelogdir%|/var/log/couchdb|g" < logrotate.d/couchdb.tpl > logrotate.d/couchdb
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making all in src
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making all in couch_dbupdates
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_dbupdates.erl;
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_dbupdates_httpd.erl;
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+Making all in couch_index
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_index.erl;
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_index_compactor.erl;
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_index_server.erl;
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_index_updater.erl;
+/usr/bin/erlc -I../../src/couchdb -o ebin/   src/couch_index_util.erl;
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+Making all in couch_mrview
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+sed -e "s|%version%|1.6.1|g" \
+< src/couch_mrview.app.src > ebin/couch_mrview.app
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_cleanup.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_compactor.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_http.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_index.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_show.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_test_util.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_updater.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_mrview_util.erl;
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+Making all in couch_plugins
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+sed -e "s|%version%|1.6.1|g" \
+< src/couch_plugins.app.src > ebin/couch_plugins.app
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+	-o ebin/   src/couch_plugins.erl;
+src/couch_plugins.erl:231: Warning: crypto:sha/1 is deprecated and will be removed in in a future release; use crypto:hash/2
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+	-o ebin/   src/couch_plugins_httpd.erl;
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+Making all in couch_replicator
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_api_wrap.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_httpc_pool.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_httpc.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_httpd.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_job_sup.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_notifier.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_manager.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_utils.erl;
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator_worker.erl;
+sed -e "s|%version%|1.6.1|g" \
+< src/couch_replicator.app.src > ebin/couch_replicator.app
+/usr/bin/erlc -Wall -I../../src -I../../src/couchdb \
+        -o ebin/   src/couch_replicator.erl;
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+Making all in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making all in priv
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make  all-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+/bin/bash ../../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy  -I/usr/include  -I/usr/lib/erlang/usr/include -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js   -O2 -g -O2 -c -o icu_driver/couch_icu_driver_la-couch_icu_driver.lo `test -f 'icu_driver/couch_icu_driver.c' || echo './'`icu_driver/couch_icu_driver.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy -I/usr/include -I/usr/lib/erlang/usr/include -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -O2 -g -O2 -c icu_driver/couch_icu_driver.c  -fPIC -DPIC -o icu_driver/.libs/couch_icu_driver_la-couch_icu_driver.o
+icu_driver/couch_icu_driver.c:171:9: warning: initialization from incompatible pointer type
+         couch_drv_control,  /* F_PTR control, port_command callback */
+         ^
+icu_driver/couch_icu_driver.c:171:9: warning: (near initialization for 'couch_driver_entry.control')
+/bin/bash ../../../libtool --tag=CC   --mode=link gcc  -O2 -g -O2 -module -avoid-version  -L/opt/local/lib -L/usr/local/lib  -o couch_icu_driver.la -rpath /usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib icu_driver/couch_icu_driver_la-couch_icu_driver.lo -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata   -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: gcc -shared  -fPIC -DPIC  icu_driver/.libs/couch_icu_driver_la-couch_icu_driver.o   -L/opt/local/lib -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata -lcrypt  -O2 -O2   -Wl,-soname -Wl,couch_icu_driver.so -o .libs/couch_icu_driver.so
+libtool: link: ( cd ".libs" && rm -f "couch_icu_driver.la" && ln -s "../couch_icu_driver.la" "couch_icu_driver.la" )
+/bin/bash ../../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy  -D_BSD_SOURCE -I/usr/include  -I/usr/lib/erlang/usr/include -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js   -O2 -g -O2 -c -o couch_ejson_compare/couch_ejson_compare_la-couch_ejson_compare.lo `test -f 'couch_ejson_compare/couch_ejson_compare.c' || echo './'`couch_ejson_compare/couch_ejson_compare.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy -D_BSD_SOURCE -I/usr/include -I/usr/lib/erlang/usr/include -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -O2 -g -O2 -c couch_ejson_compare/couch_ejson_compare.c  -fPIC -DPIC -o couch_ejson_compare/.libs/couch_ejson_compare_la-couch_ejson_compare.o
+/bin/bash ../../../libtool --tag=CC   --mode=link gcc  -O2 -g -O2 -module -avoid-version  -L/opt/local/lib -L/usr/local/lib  -o couch_ejson_compare.la -rpath /usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib couch_ejson_compare/couch_ejson_compare_la-couch_ejson_compare.lo -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata   -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: gcc -shared  -fPIC -DPIC  couch_ejson_compare/.libs/couch_ejson_compare_la-couch_ejson_compare.o   -L/opt/local/lib -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata -lcrypt  -O2 -O2   -Wl,-soname -Wl,couch_ejson_compare.so -o .libs/couch_ejson_compare.so
+libtool: link: ( cd ".libs" && rm -f "couch_ejson_compare.la" && ln -s "../couch_ejson_compare.la" "couch_ejson_compare.la" )
+cp spawnkillable/couchspawnkillable.sh couchspawnkillable
+chmod +x couchspawnkillable
+gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -g -Wall -Werror -D_BSD_SOURCE  -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2 -c -o couch_js/couchjs-http.o `test -f 'couch_js/http.c' || echo './'`couch_js/http.c
+gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -g -Wall -Werror -D_BSD_SOURCE  -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2 -c -o couch_js/couchjs-main.o `test -f 'couch_js/main.c' || echo './'`couch_js/main.c
+gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -g -Wall -Werror -D_BSD_SOURCE  -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2 -c -o couch_js/couchjs-utf8.o `test -f 'couch_js/utf8.c' || echo './'`couch_js/utf8.c
+gcc -DHAVE_CONFIG_H -I. -I../../.. -I../../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -g -Wall -Werror -D_BSD_SOURCE  -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2 -c -o couch_js/couchjs-util.o `test -f 'couch_js/util.c' || echo './'`couch_js/util.c
+/bin/bash ../../../libtool --tag=CC   --mode=link gcc -g -Wall -Werror -D_BSD_SOURCE  -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2  -L/opt/local/lib -L/usr/local/lib  -o couchjs couch_js/couchjs-http.o couch_js/couchjs-main.o couch_js/couchjs-utf8.o couch_js/couchjs-util.o -L/usr/lib/x86_64-linux-gnu -lcurl -lmozjs185 -lm  -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: gcc -g -Wall -Werror -D_BSD_SOURCE -DXP_UNIX -I/usr/include -I/usr/include/js -I/usr/include/mozjs -I/usr/local/include/js -I/opt/local/include/js -O2 -g -O2 -o couchjs couch_js/couchjs-http.o couch_js/couchjs-main.o couch_js/couchjs-utf8.o couch_js/couchjs-util.o  -L/opt/local/lib -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libcurl.so -lmozjs185 -lm -lcrypt -pthread
+cp stat_descriptions.cfg.in stat_descriptions.cfg
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+modules=`{ find . -name "*.erl" \! -name ".*" -exec basename {} .erl \; | tr '\n' ','; echo ''; } | sed "s/,$//"`; \
+sed -e "s|%package_name%|Apache CouchDB|g" \
+		-e "s|%version%|1.6.1|g" \
+		-e "s|@modules@|$modules|g" \
+		-e "s|%localconfdir%|/etc/couchdb|g" \
+		-e "s|@defaultini@|default.ini|g" \
+		-e "s|@localini@|local.ini|g" > \
+couch.app < couch.app.tpl
+chmod +x couch.app
+/usr/bin/erlc   couch.erl;
+/usr/bin/erlc   couch_app.erl;
+/usr/bin/erlc   couch_auth_cache.erl;
+/usr/bin/erlc   couch_btree.erl;
+/usr/bin/erlc   couch_changes.erl;
+/usr/bin/erlc   couch_compaction_daemon.erl;
+/usr/bin/erlc   couch_compress.erl;
+/usr/bin/erlc   couch_config.erl;
+/usr/bin/erlc   couch_config_writer.erl;
+/usr/bin/erlc   couch_db.erl;
+/usr/bin/erlc   couch_db_update_notifier.erl;
+/usr/bin/erlc   couch_db_update_notifier_sup.erl;
+/usr/bin/erlc   couch_doc.erl;
+/usr/bin/erlc   couch_drv.erl;
+/usr/bin/erlc   couch_ejson_compare.erl;
+/usr/bin/erlc   couch_event_sup.erl;
+/usr/bin/erlc   couch_external_manager.erl;
+/usr/bin/erlc   couch_external_server.erl;
+/usr/bin/erlc   couch_file.erl;
+/usr/bin/erlc   couch_httpd.erl;
+couch_httpd.erl:230: Warning: variable 'Headers' is unused
+/usr/bin/erlc   couch_httpd_db.erl;
+/usr/bin/erlc   couch_httpd_auth.erl;
+couch_httpd_auth.erl:148: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+couch_httpd_auth.erl:189: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+couch_httpd_auth.erl:236: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+/usr/bin/erlc   couch_httpd_oauth.erl;
+/usr/bin/erlc   couch_httpd_cors.erl;
+/usr/bin/erlc   couch_httpd_proxy.erl;
+/usr/bin/erlc   couch_httpd_external.erl;
+/usr/bin/erlc   couch_httpd_misc_handlers.erl;
+/usr/bin/erlc   couch_httpd_rewrite.erl;
+/usr/bin/erlc   couch_httpd_stats_handlers.erl;
+/usr/bin/erlc   couch_httpd_vhost.erl;
+/usr/bin/erlc   couch_key_tree.erl;
+/usr/bin/erlc   couch_log.erl;
+/usr/bin/erlc   couch_native_process.erl;
+/usr/bin/erlc   couch_os_daemons.erl;
+/usr/bin/erlc   couch_os_process.erl;
+/usr/bin/erlc   couch_passwords.erl;
+couch_passwords.erl:26: Warning: crypto:sha/1 is deprecated and will be removed in in a future release; use crypto:hash/2
+couch_passwords.erl:92: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+couch_passwords.erl:97: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+/usr/bin/erlc   couch_primary_sup.erl;
+/usr/bin/erlc   couch_query_servers.erl;
+/usr/bin/erlc   couch_ref_counter.erl;
+/usr/bin/erlc   couch_secondary_sup.erl;
+/usr/bin/erlc   couch_server.erl;
+couch_server.erl:131: Warning: crypto:sha/1 is deprecated and will be removed in in a future release; use crypto:hash/2
+/usr/bin/erlc   couch_server_sup.erl;
+/usr/bin/erlc   couch_stats_aggregator.erl;
+/usr/bin/erlc   couch_stats_collector.erl;
+/usr/bin/erlc   couch_stream.erl;
+/usr/bin/erlc   couch_task_status.erl;
+/usr/bin/erlc   couch_users_db.erl;
+/usr/bin/erlc   couch_util.erl;
+couch_util.erl:397: Warning: crypto:md5/1 is deprecated and will be removed in in a future release; use crypto:hash/2
+couch_util.erl:401: Warning: crypto:md5_init/0 is deprecated and will be removed in in a future release; use crypto:hash_init/1
+couch_util.erl:406: Warning: crypto:md5_update/2 is deprecated and will be removed in in a future release; use crypto:hash_update/2
+couch_util.erl:410: Warning: crypto:md5_final/1 is deprecated and will be removed in in a future release; use crypto:hash_final/1
+/usr/bin/erlc   couch_uuids.erl;
+/usr/bin/erlc   couch_db_updater.erl;
+/usr/bin/erlc   couch_work_queue.erl;
+/usr/bin/erlc   json_stream_parse.erl;
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making all in ejson
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o ejson_la-ejson.lo `test -f 'ejson.c' || echo './'`ejson.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c ejson.c  -fPIC -DPIC -o .libs/ejson_la-ejson.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o ejson_la-decode.lo `test -f 'decode.c' || echo './'`decode.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c decode.c  -fPIC -DPIC -o .libs/ejson_la-decode.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o ejson_la-encode.lo `test -f 'encode.c' || echo './'`encode.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c encode.c  -fPIC -DPIC -o .libs/ejson_la-encode.o
+encode.c: In function 'final_encode':
+encode.c:152:17: warning: incompatible implicit declaration of built-in function 'snprintf'
+                 snprintf(start, 32, "%0.20g", number);
+                 ^
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_alloc.lo `test -f 'yajl/yajl_alloc.c' || echo './'`yajl/yajl_alloc.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_alloc.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_alloc.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_buf.lo `test -f 'yajl/yajl_buf.c' || echo './'`yajl/yajl_buf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_buf.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_buf.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl.lo `test -f 'yajl/yajl.c' || echo './'`yajl/yajl.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_encode.lo `test -f 'yajl/yajl_encode.c' || echo './'`yajl/yajl_encode.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_encode.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_encode.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_gen.lo `test -f 'yajl/yajl_gen.c' || echo './'`yajl/yajl_gen.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_gen.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_gen.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_lex.lo `test -f 'yajl/yajl_lex.c' || echo './'`yajl/yajl_lex.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_lex.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_lex.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include -O2 -g -O2 -c -o yajl/ejson_la-yajl_parser.lo `test -f 'yajl/yajl_parser.c' || echo './'`yajl/yajl_parser.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -O2 -g -O2 -c yajl/yajl_parser.c  -fPIC -DPIC -o yajl/.libs/ejson_la-yajl_parser.o
+/bin/bash ../../libtool --tag=CC   --mode=link gcc -I/usr/lib/erlang/usr/include -O2 -g -O2 -module -avoid-version  -L/opt/local/lib -L/usr/local/lib  -o ejson.la -rpath /usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv ejson_la-ejson.lo ejson_la-decode.lo ejson_la-encode.lo yajl/ejson_la-yajl_alloc.lo yajl/ejson_la-yajl_buf.lo yajl/ejson_la-yajl.lo yajl/ejson_la-yajl_encode.lo yajl/ejson_la-yajl_gen.lo yajl/ejson_la-yajl_lex.lo yajl/ejson_la-yajl_parser.lo  -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/ejson_la-ejson.o .libs/ejson_la-decode.o .libs/ejson_la-encode.o yajl/.libs/ejson_la-yajl_alloc.o yajl/.libs/ejson_la-yajl_buf.o yajl/.libs/ejson_la-yajl.o yajl/.libs/ejson_la-yajl_encode.o yajl/.libs/ejson_la-yajl_gen.o yajl/.libs/ejson_la-yajl_lex.o yajl/.libs/ejson_la-yajl_parser.o   -L/opt/local/lib -L/usr/local/lib -lcrypt  -O2 -O2   -Wl,-soname -Wl,ejson.so -o .libs/ejson.so
+libtool: link: ( cd ".libs" && rm -f "ejson.la" && ln -s "../ejson.la" "ejson.la" )
+cp ejson.app.in ejson.app
+/usr/bin/erlc  ejson.erl
+/usr/bin/erlc  mochijson2.erl
+/usr/bin/erlc  mochinum.erl
+cp .libs/ejson.so priv/ejson.so
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+Making all in erlang-oauth
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+cp oauth.app.in oauth.app
+/usr/bin/erlc  oauth.erl
+oauth.erl:131: Warning: crypto:sha_mac/2 is deprecated and will be removed in in a future release; use crypto:hmac/3
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+Making all in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+/usr/bin/erlc  etap.erl
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+Making all in ibrowse
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+cp ibrowse.app.in ibrowse.app
+/usr/bin/erlc  ibrowse.erl
+/usr/bin/erlc  ibrowse_app.erl
+/usr/bin/erlc  ibrowse_http_client.erl
+/usr/bin/erlc  ibrowse_lb.erl
+/usr/bin/erlc  ibrowse_lib.erl
+/usr/bin/erlc  ibrowse_socks5.erl
+/usr/bin/erlc  ibrowse_sup.erl
+/usr/bin/erlc  ibrowse_test.erl
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+Making all in mochiweb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+/usr/bin/erlc  mochifmt.erl
+/usr/bin/erlc  mochifmt_records.erl
+/usr/bin/erlc  mochifmt_std.erl
+/usr/bin/erlc  mochiglobal.erl
+/usr/bin/erlc  mochihex.erl
+/usr/bin/erlc  mochijson.erl
+/usr/bin/erlc   mochijson2.erl
+/usr/bin/erlc  mochilists.erl
+/usr/bin/erlc  mochilogfile2.erl
+/usr/bin/erlc  mochinum.erl
+/usr/bin/erlc  mochitemp.erl
+/usr/bin/erlc  mochiutf8.erl
+cp mochiweb.app.in mochiweb.app
+/usr/bin/erlc  mochiweb.erl
+/usr/bin/erlc  mochiweb_acceptor.erl
+/usr/bin/erlc  mochiweb_app.erl
+/usr/bin/erlc  mochiweb_charref.erl
+/usr/bin/erlc  mochiweb_cookies.erl
+/usr/bin/erlc  mochiweb_cover.erl
+/usr/bin/erlc  mochiweb_echo.erl
+/usr/bin/erlc  mochiweb_headers.erl
+/usr/bin/erlc  mochiweb_html.erl
+/usr/bin/erlc  mochiweb_http.erl
+/usr/bin/erlc  mochiweb_io.erl
+/usr/bin/erlc  mochiweb_mime.erl
+/usr/bin/erlc  mochiweb_multipart.erl
+/usr/bin/erlc  mochiweb_request.erl
+mochiweb_request.erl:665: Warning: calendar:local_time_to_universal_time/1 is deprecated and will be removed in in a future release; use calendar:local_time_to_universal_time_dst/1
+/usr/bin/erlc  mochiweb_response.erl
+/usr/bin/erlc  mochiweb_skel.erl
+/usr/bin/erlc  mochiweb_socket.erl
+/usr/bin/erlc  mochiweb_socket_server.erl
+/usr/bin/erlc  mochiweb_sup.erl
+/usr/bin/erlc  mochiweb_util.erl
+/usr/bin/erlc  reloader.erl
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+Making all in snappy
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include  -g -O2 -c -o snappy_nif_la-snappy_nif.lo `test -f 'snappy_nif.cc' || echo './'`snappy_nif.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -g -O2 -c snappy_nif.cc  -fPIC -DPIC -o .libs/snappy_nif_la-snappy_nif.o
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include  -g -O2 -c -o google-snappy/snappy_nif_la-snappy.lo `test -f 'google-snappy/snappy.cc' || echo './'`google-snappy/snappy.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -g -O2 -c google-snappy/snappy.cc  -fPIC -DPIC -o google-snappy/.libs/snappy_nif_la-snappy.o
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include  -g -O2 -c -o google-snappy/snappy_nif_la-snappy-sinksource.lo `test -f 'google-snappy/snappy-sinksource.cc' || echo './'`google-snappy/snappy-sinksource.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -g -O2 -c google-snappy/snappy-sinksource.cc  -fPIC -DPIC -o google-snappy/.libs/snappy_nif_la-snappy-sinksource.o
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -I/usr/lib/erlang/usr/include  -g -O2 -c -o google-snappy/snappy_nif_la-snappy-stubs-internal.lo `test -f 'google-snappy/snappy-stubs-internal.cc' || echo './'`google-snappy/snappy-stubs-internal.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy -D_XOPEN_SOURCE -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js -I/usr/lib/erlang/usr/include -g -O2 -c google-snappy/snappy-stubs-internal.cc  -fPIC -DPIC -o google-snappy/.libs/snappy_nif_la-snappy-stubs-internal.o
+/bin/bash ../../libtool --tag=CXX   --mode=link g++ -I/usr/lib/erlang/usr/include  -g -O2 -module -avoid-version  -L/opt/local/lib -L/usr/local/lib  -o snappy_nif.la -rpath /usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv snappy_nif_la-snappy_nif.lo google-snappy/snappy_nif_la-snappy.lo google-snappy/snappy_nif_la-snappy-sinksource.lo google-snappy/snappy_nif_la-snappy-stubs-internal.lo  -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: g++  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbeginS.o  .libs/snappy_nif_la-snappy_nif.o google-snappy/.libs/snappy_nif_la-snappy.o google-snappy/.libs/snappy_nif_la-snappy-sinksource.o google-snappy/.libs/snappy_nif_la-snappy-stubs-internal.o   -L/opt/local/lib -L/usr/local/lib -lcrypt -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/4.9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o  -O2   -Wl,-soname -Wl,snappy_nif.so -o .libs/snappy_nif.so
+libtool: link: ( cd ".libs" && rm -f "snappy_nif.la" && ln -s "../snappy_nif.la" "snappy_nif.la" )
+cp snappy.app.in snappy.app
+/usr/bin/erlc  snappy.erl
+cp .libs/snappy_nif.so priv/snappy_nif.so
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+Making all in couchjs-node
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making all in share
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making all in doc
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+Making all in build
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make  all-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+mkdir -p `dirname server/main.js`
+echo "// DO NOT EDIT THIS FILE BY HAND" > server/main.js
+echo >> server/main.js
+cat server/json2.js server/filter.js server/mimeparse.js server/render.js server/state.js server/util.js server/validate.js server/views.js server/loop.js >> server/main.js
+mkdir -p `dirname server/main-coffee.js`
+echo "// DO NOT EDIT THIS FILE BY HAND" > server/main-coffee.js
+echo >> server/main-coffee.js
+cat server/json2.js server/filter.js server/mimeparse.js server/render.js server/state.js server/util.js server/validate.js server/views.js server/coffee-script.js server/loop.js >> server/main-coffee.js
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making all in test
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making all in bench
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+sed -e "s|%abs_top_srcdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|" \
+	-e "s|%abs_top_builddir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|" \
+< run.tpl > run
+chmod +x run
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+Making all in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+gcc -DHAVE_CONFIG_H -I. -I../.. -I../../src/snappy/google-snappy   -D_XOPEN_SOURCE  -I/opt/local/include -I/opt/local/include/js -I/usr/local/include -I/usr/local/include/js -I/usr/include -I/usr/include/js  -D_BSD_SOURCE -O2 -g -O2 -c -o test_cfg_register-test_cfg_register.o `test -f 'test_cfg_register.c' || echo './'`test_cfg_register.c
+/bin/bash ../../libtool --tag=CC   --mode=link gcc -D_BSD_SOURCE -O2 -g -O2  -L/opt/local/lib -L/usr/local/lib  -o test_cfg_register test_cfg_register-test_cfg_register.o  -L/opt/local/lib -L/usr/local/lib  -lcrypt
+libtool: link: gcc -D_BSD_SOURCE -O2 -g -O2 -o test_cfg_register test_cfg_register-test_cfg_register.o  -L/opt/local/lib -L/usr/local/lib -lcrypt
+sed -e "s|%abs_top_srcdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|g" \
+    -e "s|%abs_top_builddir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|g" > \
+run < run.tpl
+chmod +x run
+/usr/bin/erlc test_util.erl
+/usr/bin/erlc test_web.erl
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+Making all in javascript
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+sed -e "s|%abs_top_srcdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|" \
+	-e "s|%abs_top_builddir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1|" \
+	-e "s|%localstaterundir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/run|g" \
+< run.tpl > run
+chmod +x run
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+Making all in view_server
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making all in var
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+Making all in utils
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+sed -e "s|%ERL%|/usr/bin/erl|g" \
+    -e "s|%ICU_CONFIG%|/usr/bin/icu-config|g" \
+    -e "s|%bindir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin|g" \
+    -e "s|%defaultini%|default_dev.ini|g" \
+    -e "s|%localini%|local_dev.ini|g" \
+    -e "s|%localerlanglibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/couchdb \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/ejson \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/erlang-oauth \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/ibrowse \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/mochiweb \
+		-pa /root/cozy-packages/couchdb/apache-couchdb-1.6.1\/src\/snappy|g" \
+    -e "s|%localconfdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb|g" \
+    -e "s|%localstatelogdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/log|g" \
+    -e "s|%localstatelibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp/lib|g" \
+    -e "s|%localstatedir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp|g" \
+    -e "s|%locallibdir%|/root/cozy-packages/couchdb/apache-couchdb-1.6.1/tmp|g" \
+    -e "s|%bug_uri%|https://issues.apache.org/jira/browse/COUCHDB|g" \
+    -e "s|%package_author_address%|dev@couchdb.apache.org|g" \
+    -e "s|%package_author_name%|The Apache Software Foundation|g" \
+    -e "s|%package_name%|Apache CouchDB|g" \
+    -e "s|%version%|1.6.1|g" \
+    -e "s|%couchdb_command_name%|`echo couchdb | sed 's,x,x,'`|g" > \
+run < ../bin/couchdb.tpl
+chmod +x run
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+gzip -9 < AUTHORS > AUTHORS.gz
+gzip -9 < BUGS > BUGS.gz
+gzip -9 < DEVELOPERS > DEVELOPERS.gz
+gzip -9 < INSTALL > INSTALL.gz
+gzip -9 < INSTALL.Unix > INSTALL.Unix.gz
+gzip -9 < INSTALL.Windows > INSTALL.Windows.gz
+gzip -9 < LICENSE > LICENSE.gz
+gzip -9 < NOTICE > NOTICE.gz
+gzip -9 < README.rst > README.gz
+gzip -9 < THANKS > THANKS.gz
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+   dh_auto_test
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+Making check in bin
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make  check-am
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+Making check in etc
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making check in couchdb
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+Making check in default
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+Making check in init
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+Making check in launchd
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+Making check in logrotate.d
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+Making check in windows
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making check in src
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making check in couch_dbupdates
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+Making check in couch_index
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+Making check in couch_mrview
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+Making check in couch_plugins
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+Making check in couch_replicator
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+Making check in couchdb
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making check in priv
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make  check-am
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Nothing to be done for 'check-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[4]: Nothing to be done for 'check-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making check in ejson
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+Making check in erlang-oauth
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+Making check in etap
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+Making check in ibrowse
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+Making check in mochiweb
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+Making check in snappy
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+Making check in couchjs-node
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making check in share
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making check in doc
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+Making check in build
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make  check-am
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Nothing to be done for 'check-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Nothing to be done for 'check-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making check in test
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making check in bench
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+Making check in etap
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+Making check in javascript
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+Making check in view_server
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making check in var
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+Making check in utils
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make  all-recursive
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+Making all in bin
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make  all-am
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+Making all in etc
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making all in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+Making all in default
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+Making all in init
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+Making all in launchd
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+Making all in logrotate.d
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+Making all in windows
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making all in src
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making all in couch_dbupdates
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+Making all in couch_index
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+Making all in couch_mrview
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+Making all in couch_plugins
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+Making all in couch_replicator
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+Making all in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making all in priv
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make  all-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making all in ejson
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+Making all in erlang-oauth
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+Making all in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+Making all in ibrowse
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+Making all in mochiweb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+Making all in snappy
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+Making all in couchjs-node
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making all in share
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making all in doc
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+Making all in build
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make  all-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making all in test
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making all in bench
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+Making all in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+Making all in javascript
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+Making all in view_server
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making all in var
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+Making all in utils
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+ fakeroot debian/rules binary
+dh binary --with systemd
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+dh_auto_install
+make[2]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+Making install in bin
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make  install-am
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/bin'
+ /usr/bin/install -c couchdb couch-config '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/bin'
+make  install-exec-hook
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+ln -s -f "/usr/lib/couchdb/bin/`echo couchjs | sed 's,x,x,'`" \
+	"/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/bin/`echo couchjs | sed 's,x,x,'`"
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+if test -s couchdb.1; then \
+    if test `cat couchdb.1 | wc -l` -gt 1; then \
+        /usr/bin/install -c -d /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/man/man1; \
+        /usr/bin/install -c -m 644 couchdb.1 /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/man/man1/couchdb.1; \
+    fi \
+fi
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/bin'
+Making install in etc
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making install in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb'
+ /usr/bin/install -c -m 644 default.ini '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb'
+make  install-data-hook
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+if test ! -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/local.ini"; then \
+    cp ./local.ini "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/local.ini"; \
+fi
+if test ! "/bin/mkdir -p" = ""; then \
+    /bin/mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/default.d"; \
+    /bin/mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/local.d"; \
+else \
+    echo "WARNING: You may have to create these directories by hand."; \
+    mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/default.d"; \
+    mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/couchdb/local.d"; \
+fi
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/couchdb'
+Making install in default
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/default'
+Making install in init
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/init'
+Making install in launchd
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/launchd'
+Making install in logrotate.d
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/logrotate.d'
+Making install in windows
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc/windows'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/logrotate.d'
+ /usr/bin/install -c -m 644  logrotate.d/couchdb '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/etc/logrotate.d'
+make  install-data-hook
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+if test -n ""; then \
+    chmod +x "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/couchdb"; \
+fi
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/etc'
+Making install in src
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making install in couch_dbupdates
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin'
+ /usr/bin/install -c -m 644 ebin/couch_dbupdates.beam ebin/couch_dbupdates_httpd.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_dbupdates'
+Making install in couch_index
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_index-0.1/ebin'
+ /usr/bin/install -c -m 644 ebin/couch_index.beam ebin/couch_index_compactor.beam ebin/couch_index_server.beam ebin/couch_index_updater.beam ebin/couch_index_util.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_index-0.1/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_index'
+Making install in couch_mrview
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_mrview-0.1/ebin'
+ /usr/bin/install -c -m 644 ebin/couch_mrview.app ebin/couch_mrview.beam ebin/couch_mrview_cleanup.beam ebin/couch_mrview_compactor.beam ebin/couch_mrview_http.beam ebin/couch_mrview_index.beam ebin/couch_mrview_show.beam ebin/couch_mrview_test_util.beam ebin/couch_mrview_updater.beam ebin/couch_mrview_util.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_mrview-0.1/ebin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_mrview-0.1/include'
+ /usr/bin/install -c -m 644 include/couch_mrview.hrl '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_mrview-0.1/include'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_mrview'
+Making install in couch_plugins
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_plugins-0.1/ebin'
+ /usr/bin/install -c -m 644 ebin/couch_plugins.app ebin/couch_plugins.beam ebin/couch_plugins_httpd.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_plugins-0.1/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_plugins'
+Making install in couch_replicator
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_replicator-0.1/ebin'
+ /usr/bin/install -c -m 644 ebin/couch_replicator_api_wrap.beam ebin/couch_replicator_httpc_pool.beam ebin/couch_replicator_httpc.beam ebin/couch_replicator_httpd.beam ebin/couch_replicator_job_sup.beam ebin/couch_replicator_notifier.beam ebin/couch_replicator_manager.beam ebin/couch_replicator_utils.beam ebin/couch_replicator_worker.beam ebin/couch_replicator.app ebin/couch_replicator.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_replicator-0.1/ebin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_replicator-0.1/include'
+ /usr/bin/install -c -m 644 src/couch_replicator_api_wrap.hrl src/couch_replicator.hrl src/couch_replicator_js_functions.hrl '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch_replicator-0.1/include'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couch_replicator'
+Making install in couchdb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making install in priv
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make  install-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[7]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[7]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv'
+ /usr/bin/install -c -m 644 stat_descriptions.cfg '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c couchspawnkillable '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv'
+libtool: install: /usr/bin/install -c couchspawnkillable /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/couchspawnkillable
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   couch_icu_driver.la couch_ejson_compare.la '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib'
+libtool: install: /usr/bin/install -c .libs/couch_icu_driver.so /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so
+libtool: install: /usr/bin/install -c .libs/couch_icu_driver.lai /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.la
+libtool: install: /usr/bin/install -c .libs/couch_ejson_compare.so /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.so
+libtool: install: /usr/bin/install -c .libs/couch_ejson_compare.lai /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.la
+libtool: install: warning: remember to run `libtool --finish /usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib'
+if test -s couchjs.1; then \
+    if test `cat couchjs.1 | wc -l` -gt 1; then \
+        /usr/bin/install -c -d /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/man/man1; \
+        /usr/bin/install -c -m 644 couchjs.1 /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/man/man1/couchjs.1; \
+    fi \
+fi
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c couchjs '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/bin'
+libtool: install: /usr/bin/install -c couchjs /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/bin/couchjs
+make  install-data-hook
+make[8]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+if test -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver"; then \
+    rm -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so"; \
+    cd "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib" && \
+        ln -s couch_icu_driver couch_icu_driver.so; \
+fi
+if test -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare_nif"; then \
+    rm -f "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare_nif.so"; \
+    cd "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib" && \
+        ln -s couch_ejson_compare_nif couch_ejson_compare_nif.so; \
+fi
+make[8]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[7]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb/priv'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[6]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/ebin'
+ /usr/bin/install -c -m 644 couch.app couch.beam couch_app.beam couch_auth_cache.beam couch_btree.beam couch_changes.beam couch_compaction_daemon.beam couch_compress.beam couch_config.beam couch_config_writer.beam couch_db.beam couch_db_update_notifier.beam couch_db_update_notifier_sup.beam couch_doc.beam couch_drv.beam couch_ejson_compare.beam couch_event_sup.beam couch_external_manager.beam couch_external_server.beam couch_file.beam couch_httpd.beam couch_httpd_db.beam couch_httpd_auth.beam couch_httpd_oauth.beam couch_httpd_cors.beam couch_httpd_proxy.beam couch_httpd_external.beam couch_httpd_misc_handlers.beam couch_httpd_rewrite.beam couch_httpd_stats_handlers.beam couch_httpd_vhost.beam couch_key_tree.beam couch_log.beam couch_native_process.beam couch_os_daemons.beam couch_os_process.beam couch_passwords.beam couch_primary_sup.beam couch_query_servers.beam couch_ref_counter.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/ebin'
+ /usr/bin/install -c -m 644 couch_secondary_sup.beam couch_server.beam couch_server_sup.beam couch_stats_aggregator.beam couch_stats_collector.beam couch_stream.beam couch_task_status.beam couch_users_db.beam couch_util.beam couch_uuids.beam couch_db_updater.beam couch_work_queue.beam json_stream_parse.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/ebin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/include'
+ /usr/bin/install -c -m 644 couch_db.hrl couch_js_functions.hrl '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/couch-1.6.1/include'
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchdb'
+Making install in ejson
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/ebin'
+ /usr/bin/install -c -m 644 ejson.app ejson.beam mochijson2.beam mochinum.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/ebin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   ejson.la '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv'
+libtool: install: /usr/bin/install -c .libs/ejson.so /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so
+libtool: install: /usr/bin/install -c .libs/ejson.lai /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.la
+libtool: install: warning: remember to run `libtool --finish /usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ejson'
+Making install in erlang-oauth
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/erlang-oauth/ebin'
+ /usr/bin/install -c -m 644 oauth.app oauth.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/erlang-oauth/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/erlang-oauth'
+Making install in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/etap/ebin'
+ /usr/bin/install -c -m 644 etap.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/etap/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/etap'
+Making install in ibrowse
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin'
+ /usr/bin/install -c -m 644 ibrowse.app ibrowse.beam ibrowse_app.beam ibrowse_http_client.beam ibrowse_lb.beam ibrowse_lib.beam ibrowse_socks5.beam ibrowse_sup.beam ibrowse_test.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/ibrowse'
+Making install in mochiweb
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin'
+ /usr/bin/install -c -m 644 mochifmt.beam mochifmt_records.beam mochifmt_std.beam mochiglobal.beam mochihex.beam mochijson.beam mochijson2.beam mochilists.beam mochilogfile2.beam mochinum.beam mochitemp.beam mochiutf8.beam mochiweb.app mochiweb.beam mochiweb_acceptor.beam mochiweb_app.beam mochiweb_charref.beam mochiweb_cookies.beam mochiweb_cover.beam mochiweb_echo.beam mochiweb_headers.beam mochiweb_html.beam mochiweb_http.beam mochiweb_io.beam mochiweb_mime.beam mochiweb_multipart.beam mochiweb_request.beam mochiweb_response.beam mochiweb_skel.beam mochiweb_socket.beam mochiweb_socket_server.beam mochiweb_sup.beam mochiweb_util.beam reloader.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/mochiweb'
+Making install in snappy
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/ebin'
+ /usr/bin/install -c -m 644 snappy.app snappy.beam '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/ebin'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   snappy_nif.la '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv'
+libtool: install: /usr/bin/install -c .libs/snappy_nif.so /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so
+libtool: install: /usr/bin/install -c .libs/snappy_nif.lai /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.la
+libtool: install: warning: remember to run `libtool --finish /usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/snappy'
+Making install in couchjs-node
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src/couchjs-node'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/src'
+Making install in share
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making install in doc
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+Making install in build
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make  install-am
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[7]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[7]: Nothing to be done for 'install-exec-am'.
+if test -s texinfo/CouchDB.info; then \
+    /usr/bin/install -c -d /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/info; \
+    /usr/bin/install -c -m 644 \
+        texinfo/CouchDB.info /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/info/CouchDB; \
+    if test -n "`which install-info`"; then \
+        install-info \
+            /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/info/CouchDB \
+            /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/info/dir \
+        || true; \
+    fi \
+fi
+if test -s latex/CouchDB.pdf.gz; then \
+    /usr/bin/install -c -d /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/doc/couchdb; \
+    /usr/bin/install -c -m 644 \
+        latex/CouchDB.pdf.gz /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/doc/couchdb/CouchDB.pdf.gz; \
+fi
+for dist_file in html/_images/futon-createdb.png html/_images/futon-editdoc.png html/_images/futon-editeddoc.png html/_images/futon-overview.png html/_images/futon-replform.png html/_images/intro-consistency-01.png html/_images/intro-consistency-02.png html/_images/intro-consistency-03.png html/_images/intro-consistency-04.png html/_images/intro-consistency-05.png html/_images/intro-consistency-06.png html/_images/intro-consistency-07.png html/_images/intro-tour-01.png html/_images/intro-tour-02.png html/_images/intro-tour-03.png html/_images/intro-tour-04.png html/_images/intro-tour-05.png html/_images/intro-tour-06.png html/_images/intro-tour-07.png html/_images/intro-tour-08.png html/_images/intro-tour-09.png html/_images/intro-tour-10.png html/_images/intro-why-01.png html/_images/intro-why-02.png html/_images/intro-why-03.png html/_images/views-intro-01.png html/_images/views-intro-02.png html/_images/views-intro-03.png html/_images/views-intro-04.png html/_sources/api/basics.txt html/_sources/api/index.txt html/_sources/api/local.txt html/_sources/api/database/bulk-api.txt html/_sources/api/database/changes.txt html/_sources/api/database/common.txt html/_sources/api/database/compact.txt html/_sources/api/database/index.txt html/_sources/api/database/misc.txt html/_sources/api/database/security.txt html/_sources/api/database/temp-views.txt html/_sources/api/document/attachments.txt html/_sources/api/document/common.txt html/_sources/api/document/index.txt html/_sources/api/ddoc/common.txt html/_sources/api/ddoc/index.txt html/_sources/api/ddoc/render.txt html/_sources/api/ddoc/rewrites.txt html/_sources/api/ddoc/views.txt html/_sources/api/server/authn.txt html/_sources/api/server/common.txt html/_sources/api/server/configuration.txt html/_sources/api/server/index.txt html/_sources/config/auth.txt html/_sources/config/compaction.txt html/_sources/config/couchdb.txt html/_sources/config/externals.txt html/_sources/config/http.txt html/_sources/config/http-handlers.txt html/_sources/config/index.txt html/_sources/config/logging.txt html/_sources/config/misc.txt html/_sources/config/query-servers.txt html/_sources/config/replicator.txt html/_sources/config/services.txt html/_sources/config/intro.txt html/_sources/config/proxying.txt html/_sources/couchapp/ddocs.txt html/_sources/couchapp/index.txt html/_sources/couchapp/views/collation.txt html/_sources/couchapp/views/index.txt html/_sources/couchapp/views/intro.txt html/_sources/couchapp/views/joins.txt html/_sources/couchapp/views/nosql.txt html/_sources/couchapp/views/pagination.txt html/_sources/cve/2010-0009.txt html/_sources/cve/2010-2234.txt html/_sources/cve/2010-3854.txt html/_sources/cve/2012-5641.txt html/_sources/cve/2012-5649.txt html/_sources/cve/2012-5650.txt html/_sources/cve/index.txt html/_sources/fauxton/addons.txt html/_sources/fauxton/index.txt html/_sources/fauxton/install.txt html/_sources/install/index.txt html/_sources/install/freebsd.txt html/_sources/install/mac.txt html/_sources/install/unix.txt html/_sources/install/windows.txt html/_sources/intro/api.txt html/_sources/intro/consistency.txt html/_sources/intro/curl.txt html/_sources/intro/futon.txt html/_sources/intro/index.txt html/_sources/intro/overview.txt html/_sources/intro/security.txt html/_sources/intro/tour.txt html/_sources/intro/why.txt html/_sources/maintenance/compaction.txt html/_sources/maintenance/index.txt html/_sources/maintenance/performance.txt html/_sources/query-server/index.txt html/_sources/query-server/erlang.txt html/_sources/query-server/javascript.txt html/_sources/query-server/protocol.txt html/_sources/replication/conflicts.txt html/_sources/replication/index.txt html/_sources/replication/intro.txt html/_sources/replication/protocol.txt html/_sources/replication/replicator.txt html/_sources/whatsnew/0.8.txt html/_sources/whatsnew/0.9.txt html/_sources/whatsnew/0.10.txt html/_sources/whatsnew/0.11.txt html/_sources/whatsnew/1.0.txt html/_sources/whatsnew/1.1.txt html/_sources/whatsnew/1.2.txt html/_sources/whatsnew/1.3.txt html/_sources/whatsnew/1.4.txt html/_sources/whatsnew/1.5.txt html/_sources/whatsnew/1.6.txt html/_sources/whatsnew/index.txt html/_sources/about.txt html/_sources/contents.txt html/_sources/contributing.txt html/_sources/experimental.txt html/_sources/externals.txt html/_sources/json-structure.txt html/_static/ajax-loader.gif html/_static/basic.css html/_static/comment-bright.png html/_static/comment-close.png html/_static/comment.png html/_static/default.css html/_static/doctools.js html/_static/down-pressed.png html/_static/down.png html/_static/favicon.ico html/_static/file.png html/_static/jquery.js html/_static/logo.png html/_static/minus.png html/_static/plus.png html/_static/pygments.css html/_static/rtd.css html/_static/searchtools.js html/_static/sidebar.js html/_static/underscore.js html/_static/up-pressed.png html/_static/up.png html/_static/websupport.js html/api/basics.html html/api/index.html html/api/local.html html/api/database/bulk-api.html html/api/database/changes.html html/api/database/common.html html/api/database/compact.html html/api/database/index.html html/api/database/misc.html html/api/database/security.html html/api/database/temp-views.html html/api/document/attachments.html html/api/document/common.html html/api/document/index.html html/api/ddoc/common.html html/api/ddoc/index.html html/api/ddoc/render.html html/api/ddoc/rewrites.html html/api/ddoc/views.html html/api/server/authn.html html/api/server/common.html html/api/server/configuration.html html/api/server/index.html html/config/auth.html html/config/compaction.html html/config/couchdb.html html/config/externals.html html/config/http.html html/config/http-handlers.html html/config/index.html html/config/logging.html html/config/misc.html html/config/query-servers.html html/config/replicator.html html/config/services.html html/config/intro.html html/config/proxying.html html/couchapp/ddocs.html html/couchapp/index.html html/couchapp/views/collation.html html/couchapp/views/index.html html/couchapp/views/intro.html html/couchapp/views/joins.html html/couchapp/views/nosql.html html/couchapp/views/pagination.html html/cve/2010-0009.html html/cve/2010-2234.html html/cve/2010-3854.html html/cve/2012-5641.html html/cve/2012-5649.html html/cve/2012-5650.html html/cve/index.html html/fauxton/addons.html html/fauxton/index.html html/fauxton/install.html html/install/index.html html/install/freebsd.html html/install/mac.html html/install/unix.html html/install/windows.html html/intro/api.html html/intro/consistency.html html/intro/curl.html html/intro/futon.html html/intro/index.html html/intro/overview.html html/intro/security.html html/intro/tour.html html/intro/why.html html/maintenance/compaction.html html/maintenance/index.html html/maintenance/performance.html html/query-server/index.html html/query-server/erlang.html html/query-server/javascript.html html/query-server/protocol.html html/replication/conflicts.html html/replication/index.html html/replication/intro.html html/replication/protocol.html html/replication/replicator.html html/whatsnew/0.8.html html/whatsnew/0.9.html html/whatsnew/0.10.html html/whatsnew/0.11.html html/whatsnew/1.0.html html/whatsnew/1.1.html html/whatsnew/1.2.html html/whatsnew/1.3.html html/whatsnew/1.4.html html/whatsnew/1.5.html html/whatsnew/1.6.html html/whatsnew/index.html html/about.html html/config-ref.html html/contents.html html/contributing.html html/download.html html/experimental.html html/externals.html html/http-api.html html/index.html html/json-structure.html html/objects.inv html/search.html html/searchindex.js; do \
+    if test -s $dist_file; then \
+        inst_file=`echo $dist_file | sed s,^html,docs,`; \
+        /usr/bin/install -c -d `dirname /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/$inst_file`; \
+        /usr/bin/install -c -m 644 \
+            $dist_file /root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/$inst_file; \
+    fi \
+done
+make[7]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc/build'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[6]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[6]: Nothing to be done for 'install-exec-am'.
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share/doc'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /usr/bin/install -c -m 644  www/script/test/all_docs.js www/script/test/attachments.js www/script/test/attachments_multipart.js www/script/test/attachment_names.js www/script/test/attachment_paths.js www/script/test/attachment_ranges.js www/script/test/attachment_views.js www/script/test/auth_cache.js www/script/test/basics.js www/script/test/batch_save.js www/script/test/bulk_docs.js www/script/test/changes.js www/script/test/coffee.js www/script/test/compact.js www/script/test/config.js www/script/test/conflicts.js www/script/test/content_negotiation.js www/script/test/cookie_auth.js www/script/test/copy_doc.js www/script/test/delayed_commits.js www/script/test/design_docs.js www/script/test/design_options.js www/script/test/design_paths.js www/script/test/erlang_views.js www/script/test/etags_head.js www/script/test/etags_views.js www/script/test/form_submit.js www/script/test/http.js www/script/test/invalid_docids.js www/script/test/jsonp.js www/script/test/large_docs.js www/script/test/list_views.js www/script/test/lorem.txt www/script/test/lorem_b64.txt www/script/test/lots_of_docs.js www/script/test/method_override.js www/script/test/multiple_rows.js www/script/test/oauth.js www/script/test/oauth_users_db.js www/script/test/proxyauth.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /usr/bin/install -c -m 644  www/script/test/purge.js www/script/test/reader_acl.js www/script/test/recreate_doc.js www/script/test/reduce.js www/script/test/reduce_builtin.js www/script/test/reduce_false.js www/script/test/reduce_false_temp.js www/script/test/replication.js www/script/test/replicator_db_bad_rep_id.js www/script/test/replicator_db_by_doc_id.js www/script/test/replicator_db_compact_rep_db.js www/script/test/replicator_db_continuous.js www/script/test/replicator_db_credential_delegation.js www/script/test/replicator_db_field_validation.js www/script/test/replicator_db_filtered.js www/script/test/replicator_db_identical.js www/script/test/replicator_db_identical_continuous.js www/script/test/replicator_db_invalid_filter.js www/script/test/replicator_db_security.js www/script/test/replicator_db_simple.js www/script/test/replicator_db_successive.js www/script/test/replicator_db_survives.js www/script/test/replicator_db_swap_rep_db.js www/script/test/replicator_db_update_security.js www/script/test/replicator_db_user_ctx.js www/script/test/replicator_db_write_auth.js www/script/test/rev_stemming.js www/script/test/rewrite.js www/script/test/security_validation.js www/script/test/show_documents.js www/script/test/stats.js www/script/test/update_documents.js www/script/test/users_db.js www/script/test/users_db_security.js www/script/test/utf8.js www/script/test/uuids.js www/script/test/view_collation.js www/script/test/view_collation_raw.js www/script/test/view_conflicts.js www/script/test/view_compaction.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/js'
+ /usr/bin/install -c -m 644  www/fauxton/js/require.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/js'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www'
+ /usr/bin/install -c -m 644  www/config.html www/couch_tests.html www/custom_test.html www/database.html www/session.html www/document.html www/favicon.ico www/index.html www/plugins.html www/replicator.html www/status.html www/verify_install.html www/_sidebar.html '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/dialog'
+ /usr/bin/install -c -m 644  www/dialog/_admin_party.html www/dialog/_change_password.html www/dialog/_compact_cleanup.html www/dialog/_create_admin.html www/dialog/_login.html www/dialog/_signup.html www/dialog/_create_database.html www/dialog/_create_config.html www/dialog/_delete_database.html www/dialog/_delete_document.html www/dialog/_database_security.html www/dialog/_share_test_reports.html www/dialog/_save_view_as.html www/dialog/_upload_attachment.html '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/dialog'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/css'
+ /usr/bin/install -c -m 644  www/fauxton/css/index.css '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/css'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/style'
+ /usr/bin/install -c -m 644  www/style/jquery-ui-1.8.11.custom.css www/style/layout.css '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/style'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /usr/bin/install -c -m 644  www/script/test/view_errors.js www/script/test/view_include_docs.js www/script/test/view_multi_key_all_docs.js www/script/test/view_multi_key_design.js www/script/test/view_multi_key_temp.js www/script/test/view_offsets.js www/script/test/view_update_seq.js www/script/test/view_pagination.js www/script/test/view_sandboxing.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/test'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/img'
+ /usr/bin/install -c -m 644  www/fauxton/img/couchdb-site.png www/fauxton/img/couchdblogo.png www/fauxton/img/fontawesome-webfont.eot www/fauxton/img/fontawesome-webfont.svg www/fauxton/img/fontawesome-webfont.ttf www/fauxton/img/fontawesome-webfont.woff www/fauxton/img/FontAwesome.otf www/fauxton/img/fontcustom_fauxton.eot www/fauxton/img/fontcustom_fauxton.svg www/fauxton/img/fontcustom_fauxton.ttf www/fauxton/img/fontcustom_fauxton.woff www/fauxton/img/glyphicons-halflings-white.png www/fauxton/img/glyphicons-halflings.png www/fauxton/img/linen.png www/fauxton/img/loader.gif www/fauxton/img/minilogo.png '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/img'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/spec'
+ /usr/bin/install -c -m 644  www/spec/couch_js_class_methods_spec.js www/spec/couch_js_instance_methods_1_spec.js www/spec/couch_js_instance_methods_2_spec.js www/spec/couch_js_instance_methods_3_spec.js www/spec/custom_helpers.js www/spec/jquery_couch_js_class_methods_spec.js www/spec/jquery_couch_js_instance_methods_1_spec.js www/spec/jquery_couch_js_instance_methods_2_spec.js www/spec/jquery_couch_js_instance_methods_3_spec.js www/spec/run.html '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/spec'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/js/ace'
+ /usr/bin/install -c -m 644  www/fauxton/js/ace/mode-javascript.js www/fauxton/js/ace/mode-json.js www/fauxton/js/ace/theme-crimson_editor.js www/fauxton/js/ace/worker-javascript.js www/fauxton/js/ace/worker-json.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton/js/ace'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton'
+ /usr/bin/install -c -m 644  www/fauxton/index.html '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/fauxton'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/jspec'
+ /usr/bin/install -c -m 644  www/script/jspec/jspec.css www/script/jspec/jspec.jquery.js www/script/jspec/jspec.js www/script/jspec/jspec.xhr.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script/jspec'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script'
+ /usr/bin/install -c -m 644  www/script/couch.js www/script/couch_tests.js www/script/couch_test_runner.js www/script/futon.browse.js www/script/futon.format.js www/script/futon.js www/script/jquery.couch.js www/script/jquery.dialog.js www/script/jquery.editinline.js www/script/jquery.form.js www/script/jquery.js www/script/jquery-ui-1.8.11.custom.min.js www/script/jquery.resizer.js www/script/jquery.suggest.js www/script/json2.js www/script/oauth.js www/script/sha1.js www/script/base64.js www/script/replicator_db_inc.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/script'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/image'
+ /usr/bin/install -c -m 644  www/image/add.png www/image/apply.gif www/image/bg.png www/image/cancel.gif www/image/compact.png www/image/delete-mini.png www/image/delete.png www/image/grippie.gif www/image/hgrad.gif www/image/key.png www/image/load.png www/image/logo.png www/image/order-asc.gif www/image/order-desc.gif www/image/path.gif www/image/progress.gif www/image/rarrow.png www/image/run-mini.png www/image/run.png www/image/running.png www/image/save.png www/image/sidebar-toggle.png www/image/spinner.gif www/image/spinner_33.gif www/image/spinner_6b.gif www/image/test_failure.gif www/image/test_success.gif www/image/thead-key.gif www/image/thead.gif www/image/toggle-collapse.gif www/image/toggle-expand.gif www/image/twisty.gif '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/www/image'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb'
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/server/'
+ /usr/bin/install -c server/main.js server/main-coffee.js '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/couchdb/server/'
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/share'
+Making install in test
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making install in bench
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/bench'
+Making install in etap
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/etap'
+Making install in javascript
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/javascript'
+Making install in view_server
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test/view_server'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/test'
+Making install in var
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[4]: Nothing to be done for 'install-exec-am'.
+make  install-data-hook
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+if test ! "/bin/mkdir -p" = ""; then \
+    /bin/mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/lib/couchdb"; \
+    /bin/mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/log/couchdb"; \
+    /bin/mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/run/couchdb"; \
+else \
+    echo "WARNING: You may have to create these directories by hand."; \
+    mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/lib/couchdb"; \
+    mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/log/couchdb"; \
+    mkdir -p "/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/var/run/couchdb"; \
+fi
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/var'
+Making install in utils
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/utils'
+make[3]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[4]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/doc/couchdb'
+ /usr/bin/install -c -m 644 AUTHORS.gz BUGS.gz DEVELOPERS.gz INSTALL.gz INSTALL.Unix.gz INSTALL.Windows.gz LICENSE.gz NOTICE.gz README.gz THANKS.gz '/root/cozy-packages/couchdb/apache-couchdb-1.6.1/debian/tmp/usr/share/doc/couchdb'
+make  install-data-hook
+make[5]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+
+You have installed Apache CouchDB, time to relax.
+make[5]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[4]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[3]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+make[2]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+chmod 0640 debian/tmp/etc/couchdb/local.ini
+chmod 0750 debian/tmp/etc/couchdb/local.d
+chmod 0750 debian/tmp/var/lib/couchdb
+chmod 0750 debian/tmp/var/log/couchdb
+rm -f debian/tmp/usr/lib/couchdb/erlang/lib/couch-*/priv/lib/couch_erl_driver.la
+sed -i "/dependency_libs/ s/'.*'/''/" `find debian/tmp -name '*.la'`
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_installinfo
+   dh_pysupport
+dh_pysupport: This program is deprecated, you should use dh_python2 instead. Migration guide: http://deb.li/dhs2p
+   debian/rules override_dh_systemd_enable
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+dh_systemd_enable --name=couchdb
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+   dh_systemd_start
+   dh_lintian
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so contains an unresolvable reference to symbol driver_alloc_binary: it's probably a plugin
+dpkg-shlibdeps: warning: 2 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: debian/couchdb-bin/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so contains an unresolvable reference to symbol enif_alloc_binary: it's probably a plugin
+dpkg-shlibdeps: warning: 9 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.so contains an unresolvable reference to symbol enif_get_tuple: it's probably a plugin
+dpkg-shlibdeps: warning: 17 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: debian/couchdb-bin/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so contains an unresolvable reference to symbol enif_inspect_binary: it's probably a plugin
+dpkg-shlibdeps: warning: 17 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.so were not linked against libicudata.so.52 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so debian/couchdb-bin/usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so debian/couchdb-bin/usr/lib/couchdb/bin/couchjs debian/couchdb-bin/usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.so debian/couchdb-bin/usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so were not linked against libcrypt.so.1 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/couchdb-bin/usr/lib/couchdb/bin/couchjs was not linked against libpthread.so.0 (it uses none of the library's symbols)
+   dh_installdeb
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+erlang-depends
+WARNING: Module ibrowse_test_server not found
+dh_gencontrol
+make[1]: Leaving directory '/root/cozy-packages/couchdb/apache-couchdb-1.6.1'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `couchdb-common' in `../couchdb-common_1.6.1-1_all.deb'.
+dpkg-deb: building package `couchdb-bin' in `../couchdb-bin_1.6.1-1_amd64.deb'.
+dpkg-deb: building package `couchdb' in `../couchdb_1.6.1-1_all.deb'.
+ dpkg-genchanges  >../apache-couchdb_1.6.1-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build apache-couchdb-1.6.1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+warning: the authors of lintian do not recommend running it with root privileges!
+E: apache-couchdb changes: changed-by-address-is-root-user root <nicolas@cozycloud.cc>
+E: apache-couchdb source: source-is-missing share/server/coffee-script.js
+E: apache-couchdb source: source-is-missing share/www/script/jquery-ui-1.8.11.custom.min.js
+E: apache-couchdb source: source-is-missing share/www/fauxton/js/require.js
+E: apache-couchdb source: source-is-missing src/fauxton/assets/js/plugins/prettify.js
+E: apache-couchdb source: source-is-missing src/fauxton/assets/js/libs/spin.min.js
+E: apache-couchdb source: source-is-missing share/doc/build/html/_static/underscore.js
+E: apache-couchdb source: source-is-missing share/doc/build/html/_static/jquery.js
+E: apache-couchdb source: source-is-missing src/fauxton/assets/js/plugins/zeroclipboard/ZeroClipboard.swf
+E: apache-couchdb source: source-is-missing src/fauxton/assets/js/libs/ace/ext-elastic_tabstops_lite.js
+W: apache-couchdb source: changelog-should-mention-nmu
+W: apache-couchdb source: source-nmu-has-incorrect-version-number 1.6.1-1
+W: apache-couchdb source: ancient-standards-version 3.9.3 (current is 3.9.6)
+W: couchdb-common: new-package-should-close-itp-bug
+W: couchdb-common: embedded-javascript-library usr/share/couchdb/www/docs/_static/jquery.js please use libjs-jquery
+W: couchdb-common: embedded-javascript-library usr/share/couchdb/www/docs/_static/underscore.js please use libjs-underscore
+W: couchdb-common: duplicate-font-file usr/share/couchdb/www/fauxton/img/FontAwesome.otf also in fonts-font-awesome
+W: couchdb-common: duplicate-font-file usr/share/couchdb/www/fauxton/img/fontawesome-webfont.ttf also in fonts-font-awesome
+W: couchdb-common: embedded-javascript-library usr/share/couchdb/www/script/jquery.form.js please use libjs-jquery-form
+W: couchdb-common: embedded-javascript-library usr/share/couchdb/www/script/jquery.js please use libjs-jquery
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-why-01.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-why-02.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-why-03.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-01.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-02.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-03.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-04.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-05.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-06.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-consistency-07.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-01.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-02.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-03.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-04.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-05.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-06.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-07.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-08.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-09.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz intro-tour-10.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz futon-overview.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz futon-createdb.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz futon-editdoc.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz futon-editeddoc.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz futon-replform.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz views-intro-01.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz views-intro-02.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz views-intro-03.png
+W: couchdb-common: info-document-missing-image-file usr/share/info/CouchDB.info.gz views-intro-04.png
+W: couchdb-common: executable-not-elf-or-script usr/share/couchdb/server/main-coffee.js
+W: couchdb-common: executable-not-elf-or-script usr/share/couchdb/server/main.js
+W: couchdb: new-package-should-close-itp-bug
+W: couchdb-bin: hardening-no-relro usr/lib/couchdb/bin/couchjs
+W: couchdb-bin: hardening-no-relro usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_ejson_compare.so
+W: couchdb-bin: hardening-no-relro usr/lib/couchdb/erlang/lib/couch-1.6.1/priv/lib/couch_icu_driver.so
+W: couchdb-bin: hardening-no-relro usr/lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so
+W: couchdb-bin: hardening-no-relro usr/lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so
+W: couchdb-bin: new-package-should-close-itp-bug
+W: couchdb-bin: virtual-package-depends-without-real-package-depends depends: erlang-abi-17.0
+W: couchdb-bin: binary-without-manpage usr/bin/couch-config
+Finished running lintian.
