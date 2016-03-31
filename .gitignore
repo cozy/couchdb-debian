@@ -1,0 +1,8 @@
+build-package.sh
+apache-couchdb_*.debian.tar.xz
+apache-couchdb_*.dsc
+apache-couchdb_*_amd64.build
+apache-couchdb_*_amd64.changes
+couchdb-bin_*_amd64.deb
+couchdb-common_*_all.deb
+couchdb_*_all.deb
