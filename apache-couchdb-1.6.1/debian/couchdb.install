@@ -1,5 +1,6 @@
 debian/tmp/etc/couchdb/local.ini
 debian/tmp/etc/couchdb/local.d
 debian/tmp/etc/logrotate.d
+debian/tmp/etc/init.d/couchdb
 debian/tmp/var/lib
 debian/tmp/var/log
